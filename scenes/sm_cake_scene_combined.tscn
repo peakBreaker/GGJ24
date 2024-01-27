@@ -115,25 +115,30 @@ _data = {
 script = ExtResource("2_efp7p")
 
 [node name="sm_room" parent="RootNode" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.00210905, 5.00474, -0.0174818)
 cast_shadow = 0
 
 [node name="spotLight1" parent="RootNode" index="4"]
-transform = Transform3D(1, 0, 0, 0, 0.0948901, 0.995488, 0, -0.995488, 0.0948901, -0.22611, 4.91757, 2.23546)
-light_energy = 0.36
-light_negative = true
-spot_range = 4.287
-spot_angle = 59.01
+transform = Transform3D(0.974429, 0.224672, 0.0033545, -0.103098, 0.433784, 0.895099, 0.199648, -0.872556, 0.445855, 0.113229, 4.21766, 4.43056)
+visible = false
+light_energy = 7.825
+light_size = 0.333
+spot_attenuation = 0.707108
 
 [node name="pointLight1" parent="RootNode" index="5"]
-light_energy = 1.315
-light_bake_mode = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203394, 2.80879, 3.165)
+light_energy = 5.409
+light_indirect_energy = 6.64
 shadow_enabled = true
+distance_fade_begin = 27.5
+distance_fade_shadow = 3323.51
+distance_fade_length = 16.8
 
 [node name="cam_cake" parent="RootNode" index="6"]
+unique_name_in_owner = true
 transform = Transform3D(0.999976, 7.31058e-05, -0.00698086, 3.01952e-10, 0.999945, 0.0104718, 0.00698125, -0.0104715, 0.999921, -0.167919, 2.08095, 4.55985)
 current = true
 near = 0.1
-far = 600015.0
 
 [node name="AnimationPlayer" parent="." index="1"]
 method_call_mode = 1

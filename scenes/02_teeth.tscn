@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bach71pvih7kk"]
+[gd_scene load_steps=2 format=3 uid="uid://bach71pvih7kk"]
+
+[ext_resource type="Script" path="res://scenes/02_teeth.gd" id="1_u4d04"]
 
 [node name="02_teeth" type="Node3D"]
+script = ExtResource("1_u4d04")
