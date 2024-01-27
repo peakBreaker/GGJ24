@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://df1ek1pfbhrsg"]
 
-[ext_resource type="SpriteFrames" uid="uid://c1mvla63t8yee" path="res://assets/animations/mus example image seq/mouse_jump.tres" id="1_d1hfj"]
+[ext_resource type="SpriteFrames" path="res://assets/animations/mus example image seq/mouse_jump.tres" id="1_d1hfj"]
 [ext_resource type="Script" path="res://scenes/play_animation.gd" id="2_x0p0h"]
 [ext_resource type="PackedScene" uid="uid://ckutf42vlk856" path="res://scenes/sm_cake_scene_combined.tscn" id="20_qtusq"]
 
