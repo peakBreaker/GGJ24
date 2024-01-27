@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckutf42vlk856"]
+
+[ext_resource type="PackedScene" path="res://assets/3d/scenes/CakeScene/sm_cakeScene_combined.fbx" id="1_3rukk"]
+
+[sub_resource type="GDScript" id="GDScript_i5vng"]
+resource_name = "cameraselect"
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$RootNode/cam_cake.make_current()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="sm_cakeScene_combined" instance=ExtResource("1_3rukk")]
+script = SubResource("GDScript_i5vng")
+
+[node name="cam_cake" parent="RootNode" index="6"]
+transform = Transform3D(0.999976, 7.31058e-05, -0.00698086, 3.01952e-10, 0.999945, 0.0104718, 0.00698125, -0.0104715, 0.999921, -0.197903, 2.12593, 8.85469)
+current = true
