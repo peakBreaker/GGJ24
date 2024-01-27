@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpdrmo3xtco4e"]
+
+[ext_resource type="PackedScene" uid="uid://b2ykmcs7gbhqu" path="res://assets/3d/scenes/LakeScene/scene_Lake_.fbx" id="1_8036l"]
+
+[node name="scene_Lake_" instance=ExtResource("1_8036l")]

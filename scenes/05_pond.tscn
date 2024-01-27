@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cns01c17d31k6"]
+[gd_scene load_steps=3 format=3 uid="uid://cns01c17d31k6"]
 
 [ext_resource type="Script" path="res://scenes/05_pond.gd" id="1_lem20"]
+[ext_resource type="PackedScene" uid="uid://bpdrmo3xtco4e" path="res://assets/3d/scenes/LakeScene/scene_lake_.tscn" id="2_onv7d"]
 
 [node name="05_pond" type="Node3D"]
 script = ExtResource("1_lem20")
+
+[node name="scene_Lake_" parent="." instance=ExtResource("2_onv7d")]

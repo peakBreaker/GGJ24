@@ -9,7 +9,7 @@ var active_scene_instance
 var scenes = [
 	preload("res://scenes/01_birthday.tscn"),
 	preload("res://scenes/02_teeth.tscn"),
-	preload("res://scenes/03_lake.tscn"),
+	preload("res://scenes/03_clown.tscn"),
 	preload("res://scenes/04_nine_eleven.tscn"),
 	preload("res://scenes/05_pond.tscn"),
 	preload("res://scenes/06_well.tscn"),
@@ -22,14 +22,12 @@ func _ready():
 
 func loadScene(scene_idx: int):
 	var scene = scenes[scene_idx]
-	print('scene: %s index: %d' %[scene, scene_idx])
 	if(active_scene_instance):
 		active_scene_instance.queue_free()
 	active_scene_instance = scene.instantiate()
 	print('loading scene %s' % active_scene_instance.name)
 	active_scene_instance.connect('on_win', show_win_screen)
 	active_scene_instance.connect('on_lose', show_lose_screen)
-	print(active_scene_instance.on_lose.get_connections())
 	add_child(active_scene_instance)
 
 func _on_play_button_pressed():
