@@ -1,37 +1,32 @@
-[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://dbj488fajykff"]
+[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://dbj488fajykff"]
 
-[ext_resource type="Texture2D" uid="uid://d2fmak3l22rhu" path="res://assets/2d/Boy crying_/Dream 24/frame_001.png" id="1_nokso"]
-[ext_resource type="Texture2D" uid="uid://rjxuplivj2el" path="res://assets/2d/Boy crying_/Dream 24/frame_002.png" id="2_r7a80"]
-[ext_resource type="Texture2D" uid="uid://bydlhegbqpxlf" path="res://assets/2d/Boy crying_/Dream 24/frame_003.png" id="3_qwyli"]
-[ext_resource type="Texture2D" uid="uid://qdg2l63h5t2q" path="res://assets/2d/Boy crying_/Dream 24/frame_004.png" id="4_lhrg5"]
-[ext_resource type="Texture2D" uid="uid://ddnip8kgq6t5j" path="res://assets/2d/Boy crying_/Dream 24/frame_005.png" id="5_ix6pp"]
-[ext_resource type="Texture2D" uid="uid://ckxjuxstunyl0" path="res://assets/2d/Boy inhale/Dream 24/frame_001.png" id="6_8y4qh"]
-[ext_resource type="Texture2D" uid="uid://codc0kws51obx" path="res://assets/2d/Boy inhale/Dream 24/frame_002.png" id="7_42jxu"]
-[ext_resource type="Texture2D" uid="uid://chvmuotn8y0ih" path="res://assets/2d/Boy inhale/Dream 24/frame_003.png" id="8_ba510"]
-[ext_resource type="Texture2D" uid="uid://3dpy6hut57nr" path="res://assets/2d/Boy inhale/Dream 24/frame_004.png" id="9_u1f6v"]
-[ext_resource type="Texture2D" uid="uid://cw3g8g5tk25eh" path="res://assets/2d/Boy inhale/Dream 24/frame_005.png" id="10_jt2mf"]
-[ext_resource type="Texture2D" uid="uid://bnsw3re75abki" path="res://assets/2d/Boy waiting_/Dream 24/frame_001.png" id="11_twhds"]
-[ext_resource type="Texture2D" uid="uid://bibxkokwyttmm" path="res://assets/2d/Boy waiting_/Dream 24/frame_002.png" id="12_85o0o"]
-[ext_resource type="Texture2D" uid="uid://dqcxgh33ca3as" path="res://assets/2d/Boy waiting_/Dream 24/frame_003.png" id="13_slwkr"]
-[ext_resource type="Texture2D" uid="uid://d3571liaudcv3" path="res://assets/2d/Boy waiting_/Dream 24/frame_004.png" id="14_1l1ei"]
+[ext_resource type="Texture2D" uid="uid://q7d6ghn7c2eh" path="res://assets/animations/Birthday_crying/Dream 24/frame_1.png" id="1_jtumm"]
+[ext_resource type="Texture2D" uid="uid://dnh4700fjyjlp" path="res://assets/animations/Birthday_crying/Dream 24/frame_2.png" id="2_owlc0"]
+[ext_resource type="Texture2D" uid="uid://edy8lr76yyl4" path="res://assets/animations/Birthday_crying/Dream 24/frame_3.png" id="3_iea63"]
+[ext_resource type="Texture2D" uid="uid://r7830tf0yg5i" path="res://assets/animations/Birthday_crying/Dream 24/frame_4.png" id="4_v22ul"]
+[ext_resource type="Texture2D" uid="uid://dcx46f630kmv8" path="res://assets/animations/Birthday_inhale/Dream 24/frame_1.png" id="5_j0t5t"]
+[ext_resource type="Texture2D" uid="uid://bivf6b8d0tyrm" path="res://assets/animations/Birthday_inhale/Dream 24/frame_2.png" id="6_kwcfw"]
+[ext_resource type="Texture2D" uid="uid://t8nc50fm6hrg" path="res://assets/animations/Birthday_inhale/Dream 24/frame_3.png" id="7_5ixlf"]
+[ext_resource type="Texture2D" uid="uid://gognj3ygch6f" path="res://assets/animations/Birthday_inhale/Dream 24/frame_4.png" id="8_hg0pt"]
+[ext_resource type="Texture2D" uid="uid://b5r632fgl1sh0" path="res://assets/animations/Birthday_waiting/Dream 24/frame_1.png" id="9_elh2d"]
+[ext_resource type="Texture2D" uid="uid://xi4j8aru6sp8" path="res://assets/animations/Birthday_waiting/Dream 24/frame_2.png" id="10_el8lv"]
+[ext_resource type="Texture2D" uid="uid://cciscqv5y7d02" path="res://assets/animations/Birthday_waiting/Dream 24/frame_3.png" id="11_lth0l"]
+[ext_resource type="Texture2D" uid="uid://bo760qnemd1rr" path="res://assets/animations/Birthday_waiting/Dream 24/frame_4.png" id="12_greev"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_nokso")
+"texture": ExtResource("1_jtumm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_r7a80")
+"texture": ExtResource("2_owlc0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qwyli")
+"texture": ExtResource("3_iea63")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_lhrg5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ix6pp")
+"texture": ExtResource("4_v22ul")
 }],
 "loop": true,
 "name": &"crying",
@@ -39,19 +34,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_8y4qh")
+"texture": ExtResource("5_j0t5t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_42jxu")
+"texture": ExtResource("6_kwcfw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ba510")
+"texture": ExtResource("7_5ixlf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_u1f6v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_jt2mf")
+"texture": ExtResource("8_hg0pt")
 }],
 "loop": true,
 "name": &"inhale",
@@ -59,16 +51,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_twhds")
+"texture": ExtResource("9_elh2d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_85o0o")
+"texture": ExtResource("10_el8lv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_slwkr")
+"texture": ExtResource("11_lth0l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_1l1ei")
+"texture": ExtResource("12_greev")
 }],
 "loop": true,
 "name": &"waiting",

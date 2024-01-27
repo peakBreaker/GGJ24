@@ -6,7 +6,7 @@ extends Node3D
 signal on_win
 signal on_lose
 
-var can_intervene = true
+var game_over = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,19 +14,24 @@ func _ready():
 	$Game/shake_speed.play("shake_speed")
 	# Do some action
 	await get_tree().create_timer(10.0).timeout
-	# Do something afterwards
-	anim_sprite.play("inhale")
+	if not game_over:
+		# Do something afterwards
+		anim_sprite.play("inhale")
 	await get_tree().create_timer(10.0).timeout
 	$Game/Instruction.queue_free()
-	can_intervene = false
-	anim_sprite.play("waiting")
-	sound_player.stream = preload("res://assets/sounds/candle_blowout.mp3")
-	sound_player.play()
+	if not game_over:
+		on_win.emit()
+		game_over = true
+		anim_sprite.play("waiting")
+		sound_player.stream = preload("res://assets/sounds/candle_blowout.mp3")
+		sound_player.play()
 	
 func _input(event):
 	# handle the space button here
 	if event.is_action_pressed("the_button"):
+		$Game/Instruction.queue_free()
 		on_lose.emit()
+		game_over = true
 		print("SPACE was pressed")
 		sound_player.stream = preload("res://assets/sounds/audio_crying.mp3")
 		sound_player.play()
