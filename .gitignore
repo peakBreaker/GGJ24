@@ -1,3 +1,23 @@
 # Godot 4+ specific ignores
 .godot/
 .DS_Store
+
+# General
+*.import
+*.autosave
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Godot-specific
+.mono/
+export_presets.cfg
+.godot/
+
+# Temp files
+tmp/
+
+# Project-specific
+logs/
+assets/some_specific_asset_to_ignore/
