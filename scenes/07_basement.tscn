@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dfynp8pt2jrsd"]
+[gd_scene load_steps=2 format=3 uid="uid://dfynp8pt2jrsd"]
+
+[ext_resource type="Script" path="res://scenes/07_basement.gd" id="1_b5xbl"]
 
 [node name="07_basement" type="Node3D"]
+script = ExtResource("1_b5xbl")

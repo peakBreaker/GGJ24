@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://4u27rpe8puy"]
+[gd_scene load_steps=2 format=3 uid="uid://4u27rpe8puy"]
+
+[ext_resource type="Script" path="res://scenes/06_well.gd" id="1_d2h5x"]
 
 [node name="06_well" type="Node3D"]
+script = ExtResource("1_d2h5x")

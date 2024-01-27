@@ -23,18 +23,15 @@ func _ready():
 
 func loadScene(scene_idx: int):
 	var scene = scenes[scene_idx]
+	print('scene: %s index: %d' %[scene, scene_idx])
+	if(active_scene_instance):
+		active_scene_instance.queue_free()
 	active_scene_instance = scene.instantiate()
 	print('loading scene %s' % active_scene_instance.name)
 	active_scene_instance.connect('on_win', show_win_screen)
 	active_scene_instance.connect('on_lose', show_lose_screen)
+	print(active_scene_instance.on_lose.get_connections())
 	add_child(active_scene_instance)
-	if scene_idx > 0:
-		pass
-		# scenes[scene_idx - 1].queue_free()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 func _on_play_button_pressed():
 	active_scene += 1
@@ -45,14 +42,8 @@ func _on_play_button_pressed():
 
 func show_win_screen():
 	print('win')
-	disconnect_signals()
 	win_menu.show()
 
 func show_lose_screen():
 	print('lost')
-	disconnect_signals()
 	lose_menu.show()
-
-func disconnect_signals():
-	active_scene_instance.disconnect('on_win', show_win_screen)
-	active_scene_instance.disconnect('on_lose', show_lose_screen)
