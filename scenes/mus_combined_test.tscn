@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://x8dkctxiww33"]
+
+[ext_resource type="Script" path="res://scripts/mus_test_anim.gd" id="2_c8grx"]
+[ext_resource type="PackedScene" uid="uid://gk0dul1npbdp" path="res://assets/animations/mus example/anim_mus_combined.tscn" id="4_rhxiw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wlnn"]
+sky_top_color = Color(0.384314, 0.454902, 0.54902, 1)
+sky_horizon_color = Color(0.646078, 0.655975, 0.670505, 1)
+sky_energy_multiplier = 3.0
+ground_horizon_color = Color(0.646078, 0.655975, 0.670505, 1)
+
+[sub_resource type="Sky" id="Sky_nt4dv"]
+sky_material = SubResource("ProceduralSkyMaterial_0wlnn")
+
+[sub_resource type="Environment" id="Environment_t6fsa"]
+background_mode = 2
+sky = SubResource("Sky_nt4dv")
+ambient_light_source = 2
+ambient_light_color = Color(0.752941, 0.686275, 0.937255, 1)
+ambient_light_energy = 1.08
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.51
+fog_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3h2cd"]
+auto_exposure_enabled = true
+
+[sub_resource type="Animation" id="Animation_nfgjx"]
+resource_name = "camera"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_shf75"]
+_data = {
+"camera": SubResource("Animation_nfgjx")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_26x8c"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_rr17a"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_26x8c")
+nodes/Animation/position = Vector2(523.5, 111.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t6fsa")
+camera_attributes = SubResource("CameraAttributesPractical_3h2cd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_shf75")
+}
+script = ExtResource("2_c8grx")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_rr17a")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="anim_mus_combined2" parent="." instance=ExtResource("4_rhxiw")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_color = Color(1, 1, 0.819608, 1)
+light_energy = 1.838
+light_indirect_energy = 1.457
+light_volumetric_fog_energy = 3.895
+light_angular_distance = 22.29
+shadow_enabled = true
+shadow_blur = 7.619

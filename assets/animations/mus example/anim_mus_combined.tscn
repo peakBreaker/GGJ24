@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://gk0dul1npbdp"]
+
+[ext_resource type="Script" path="res://assets/animations/mus example/anim_mus_combined.gd" id="1_4u48s"]
+[ext_resource type="Script" path="res://assets/animations/mus example/RootNode.gd" id="2_sjusb"]
+[ext_resource type="Script" path="res://assets/animations/mus example/test_script.gd" id="4_djgg4"]
+[ext_resource type="Script" path="res://scripts/mus_test_anim.gd" id="4_yg1ah"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1345k"]
+animation = &"Take 001"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_k1ik3"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_1345k")
+nodes/Animation/position = Vector2(120, 100)
+nodes/output/position = Vector2(340, 100)
+node_connections = [&"output", 0, &"Animation"]
+
+[node name="anim_mus_combined"]
+script = ExtResource("1_4u48s")
+
+[node name="RootNode" parent="." index="0"]
+script = ExtResource("2_sjusb")
+
+[node name="camera_mus" parent="RootNode" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(-0.00070767, -3.55492e-07, 1, -0.000466562, 0.999999, 2.53203e-08, -1, -0.000466561, -0.00070767, 8.84127e-05, 16.9375, 28.2663)
+
+[node name="AnimationPlayer" parent="." index="1"]
+script = ExtResource("4_yg1ah")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_k1ik3")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+
+[node name="Node3D" type="Node3D" parent="." index="3"]
+script = ExtResource("4_djgg4")

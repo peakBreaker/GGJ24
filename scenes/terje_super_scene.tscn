@@ -1,0 +1,172 @@
+[gd_scene load_steps=26 format=3 uid="uid://0dhaga4i5srq"]
+
+[ext_resource type="Texture2D" uid="uid://cpp2orf8q6tl4" path="res://assets/animations/mus example image seq/frame_01.png" id="1_hg08c"]
+[ext_resource type="Texture2D" uid="uid://gm5h7gs1bvtg" path="res://assets/animations/mus example image seq/frame_02.png" id="2_qxwsv"]
+[ext_resource type="Texture2D" uid="uid://c71n81iu0wq43" path="res://assets/animations/mus example image seq/frame_03.png" id="3_q736g"]
+[ext_resource type="Texture2D" uid="uid://dntnwdkbmeyk5" path="res://assets/animations/mus example image seq/frame_04.png" id="4_hkycn"]
+[ext_resource type="Texture2D" uid="uid://be2lukwgaqgan" path="res://assets/animations/mus example image seq/frame_05.png" id="5_qnrd1"]
+[ext_resource type="Texture2D" uid="uid://dn0scpdr4kfsh" path="res://assets/animations/mus example image seq/frame_06.png" id="6_7up6q"]
+[ext_resource type="Texture2D" uid="uid://7ubk3yexaj17" path="res://assets/animations/mus example image seq/frame_07.png" id="7_oy0uw"]
+[ext_resource type="Texture2D" uid="uid://cctutmq0emlqq" path="res://assets/animations/mus example image seq/frame_08.png" id="8_rt6ry"]
+[ext_resource type="Texture2D" uid="uid://dc25a1udwapt8" path="res://assets/animations/mus example image seq/frame_09.png" id="9_t0g0b"]
+[ext_resource type="Texture2D" uid="uid://bl1du4u2lelmk" path="res://assets/animations/mus example image seq/frame_10.png" id="10_hlx7p"]
+[ext_resource type="Texture2D" uid="uid://eofwhpybgv87" path="res://assets/animations/mus example image seq/frame_11.png" id="11_j8gcv"]
+[ext_resource type="Texture2D" uid="uid://bmboi7ijmcf6w" path="res://assets/animations/mus example image seq/frame_12.png" id="12_dvgpj"]
+[ext_resource type="Texture2D" uid="uid://3w55l067fue" path="res://assets/animations/mus example image seq/frame_13.png" id="13_rvbny"]
+[ext_resource type="Texture2D" uid="uid://dgfgugntfb4pt" path="res://assets/animations/mus example image seq/frame_14.png" id="14_76682"]
+[ext_resource type="Texture2D" uid="uid://bk0qev7a8gmb4" path="res://assets/animations/mus example image seq/frame_15.png" id="15_0a3cp"]
+[ext_resource type="Texture2D" uid="uid://c8ci7yj55m1xf" path="res://assets/animations/mus example image seq/frame_16.png" id="16_nyj2n"]
+[ext_resource type="Texture2D" uid="uid://bafjrq4twsdpf" path="res://assets/animations/mus example image seq/frame_17.png" id="17_pfsss"]
+[ext_resource type="Texture2D" uid="uid://cunfdc7xnneh" path="res://assets/animations/mus example image seq/frame_18.png" id="18_xjjj1"]
+[ext_resource type="Texture2D" uid="uid://dmdyv5u37une3" path="res://assets/animations/mus example image seq/frame_19.png" id="19_0tfps"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7nay"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hg08c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qxwsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q736g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hkycn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qnrd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7up6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oy0uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rt6ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t0g0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hlx7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j8gcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dvgpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rvbny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_76682")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0a3cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nyj2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pfsss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xjjj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0tfps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_783s3"]
+resource_name = "mus_test"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2.08165e-12, 4.44028, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_o7nay")]
+}
+
+[sub_resource type="Animation" id="Animation_yhl2h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_o7nay")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtjox"]
+_data = {
+"RESET": SubResource("Animation_yhl2h"),
+"mus_test": SubResource("Animation_783s3")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rrhfe"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_k2pbo"]
+graph_offset = Vector2(-197.968, 29.6944)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_rrhfe")
+nodes/Animation/position = Vector2(90, 110)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wtjox")
+}
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o7nay")
+frame_progress = 0.830921
+speed_scale = 2.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_k2pbo")
+anim_player = NodePath("../AnimationPlayer")
