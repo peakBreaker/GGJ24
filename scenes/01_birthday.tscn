@@ -847,7 +847,7 @@ mesh = SubResource("ArrayMesh_0auqk")
 skeleton = NodePath("")
 
 [node name="sm_chair3" type="MeshInstance3D" parent="scene_Birthday_/RootNode/CakeScene"]
-transform = Transform3D(0.453858, 0, 0, 0, 0.453858, 0, 0, 0, 0.453858, -0.525972, 0.980054, 0.732707)
+transform = Transform3D(0.453858, 0, 0, 0, 0.453858, 0, 0, 0, 0.453858, -1.45352, 0.980054, 0.732707)
 mesh = SubResource("ArrayMesh_prvyd")
 skeleton = NodePath("")
 
@@ -857,7 +857,7 @@ mesh = SubResource("ArrayMesh_kqlsk")
 skeleton = NodePath("")
 
 [node name="sm_chair2" type="MeshInstance3D" parent="scene_Birthday_/RootNode/CakeScene"]
-transform = Transform3D(-0.113622, 1.09393e-16, -0.439406, 1.39147e-17, 0.453858, 1.09393e-16, 0.439406, 1.39147e-17, -0.113622, 0.534777, 0.980054, 1.10806)
+transform = Transform3D(-0.113622, 1.09393e-16, -0.439406, 1.39147e-17, 0.453858, 1.09393e-16, 0.439406, 1.39147e-17, -0.113622, -0.253257, 0.980054, 1.10806)
 mesh = SubResource("ArrayMesh_nflj8")
 skeleton = NodePath("")
 
@@ -906,14 +906,14 @@ script = ExtResource("7_vr6eu")
 stream = ExtResource("8_b4m3r")
 
 [node name="Instruction" type="Node3D" parent="Game"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00571553, 0.00571553, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0544344, 0.0544344, 0)
 
 [node name="Label3D" type="Label3D" parent="Game/Instruction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12356, 2.29765, 2.02295)
 text = "Spacebar"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
-transform = Transform3D(0.524329, 0, 0, 0, 0.524329, 0, 0, 0, 0.524329, -0.0910844, 1.92937, 1.00126)
+transform = Transform3D(0.319791, 0, 0, 0, 0.319791, 0, 0, 0, 0.319791, -0.15728, 2.14844, 1.00126)
 sprite_frames = ExtResource("9_5bxyc")
 animation = &"waiting"
 
