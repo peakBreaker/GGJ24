@@ -1,5 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpdrmo3xtco4e"]
+[gd_scene load_steps=4 format=3 uid="uid://bpdrmo3xtco4e"]
 
 [ext_resource type="PackedScene" uid="uid://b2ykmcs7gbhqu" path="res://assets/3d/scenes/LakeScene/scene_Lake_.fbx" id="1_8036l"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bmt4a"]
+animation = &"Take 001"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_icc6r"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_bmt4a")
+nodes/Animation/position = Vector2(180, 60)
+nodes/output/position = Vector2(360, 60)
+node_connections = [&"output", 0, &"Animation"]
+
 [node name="scene_Lake_" instance=ExtResource("1_8036l")]
+
+[node name="cam_lake" parent="RootNode/lake" index="5"]
+transform = Transform3D(0.11335, 0.0342225, 0.992966, -0.289032, 0.957319, 0, -0.950585, -0.286999, 0.118404, 0.410519, 4.02458, 4.70721)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_icc6r")
+anim_player = NodePath("../AnimationPlayer")
