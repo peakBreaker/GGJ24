@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bl14mt7ev1umk"]
+[gd_scene load_steps=2 format=3 uid="uid://bl14mt7ev1umk"]
+
+[ext_resource type="Script" path="res://scenes/03_lake.gd" id="1_5y1ne"]
 
 [node name="lake" type="Node3D"]
+script = ExtResource("1_5y1ne")

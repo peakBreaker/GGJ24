@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dh6argfmxcwu3"]
+[gd_scene load_steps=2 format=3 uid="uid://dh6argfmxcwu3"]
+
+[ext_resource type="Script" path="res://scenes/04_nine_eleven.gd" id="1_babw6"]
 
 [node name="04_nine_eleven" type="Node3D"]
+script = ExtResource("1_babw6")
