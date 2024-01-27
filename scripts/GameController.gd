@@ -7,10 +7,10 @@ func _ready():
 	anim_sprite.play("waiting")
 	$shake_speed.play("shake_speed")
 	# Do some action
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	# Do something afterwards
 	anim_sprite.play("inhale")
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	$Instruction.queue_free()
 	can_intervene = false
 	anim_sprite.play("waiting")
