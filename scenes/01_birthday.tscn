@@ -1,6 +1,7 @@
-[gd_scene load_steps=63 format=3 uid="uid://8jshrh0e8fb4"]
+[gd_scene load_steps=64 format=3 uid="uid://8jshrh0e8fb4"]
 
 [ext_resource type="Texture2D" uid="uid://dpyiuy73rabr7" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_generics_A1_d.png" id="1_svxgm"]
+[ext_resource type="Script" path="res://scripts/01_birthday.gd" id="1_ukplc"]
 [ext_resource type="Texture2D" uid="uid://fsqr3bxcipnm" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_generics_A1_d_1.png" id="2_mi487"]
 [ext_resource type="Texture2D" uid="uid://bjdx4jmft6u60" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_carpet_d.png" id="3_ges33"]
 [ext_resource type="Texture2D" uid="uid://ckj643f6vbmlv" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_blueWall_d.png" id="4_u63bl"]
@@ -778,6 +779,7 @@ _data = {
 }
 
 [node name="01_birthday" type="Node3D"]
+script = ExtResource("1_ukplc")
 
 [node name="scene_Birthday_" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
@@ -891,7 +893,7 @@ tree_root = SubResource("AnimationNodeStateMachine_cytth")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="background_sounds" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_krjn5")
 autoplay = true
 
@@ -899,11 +901,11 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866332, 0, -2.35671)
 script = ExtResource("7_vr6eu")
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Game"]
+[node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
 stream = ExtResource("8_b4m3r")
 
 [node name="Instruction" type="Node3D" parent="Game"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0171844, -0.0171844, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0994936, -0.0994936, 0)
 
 [node name="Label3D" type="Label3D" parent="Game/Instruction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12356, 2.29765, 2.02295)
