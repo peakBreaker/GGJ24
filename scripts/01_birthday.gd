@@ -3,7 +3,11 @@ extends Node3D
 @onready var anim_sprite = $Game/AnimatedSprite3D
 @onready var sound_player = $Game/sounds
 
+signal on_win
+signal on_lose
+
 var can_intervene = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	anim_sprite.play("waiting")
@@ -21,11 +25,12 @@ func _ready():
 	
 func _input(event):
 	# handle the space button here
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_SPACE:
-			print("SPACE was pressed")
-			sound_player.stream = preload("res://assets/sounds/audio_crying.mp3")
-			sound_player.play()
+	if event.is_action_pressed("the_button"):
+		on_lose.emit()
+		print("SPACE was pressed")
+		sound_player.stream = preload("res://assets/sounds/audio_crying.mp3")
+		sound_player.play()
+		$background_sounds.stop()
 			
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
