@@ -1,6 +1,10 @@
 extends Node3D
 
 var active_scene := 1
+var active_scene_instance
+@onready var lose_menu: Panel = %LoseMenu
+@onready var win_menu: Panel = %WinMenu
+@onready var start_menu: Panel = %StartMenu
 
 var scenes = [
 	preload("res://scenes/sm_cake_scene_combined.tscn"),
@@ -19,10 +23,11 @@ func _ready():
 
 func loadScene(scene_idx: int):
 	var scene = scenes[scene_idx]
-	var instance = scene.instantiate()
-	instance.connect('on_win', show_win_screen)
-	instance.connect('on_lose', show_lose_screen)
-	add_child(instance)
+	active_scene_instance = scene.instantiate()
+	print('loading scene %s' % active_scene_instance.name)
+	active_scene_instance.connect('on_win', show_win_screen)
+	active_scene_instance.connect('on_lose', show_lose_screen)
+	add_child(active_scene_instance)
 	if scene_idx > 0:
 		pass
 		# scenes[scene_idx - 1].queue_free()
@@ -34,10 +39,20 @@ func _process(_delta):
 func _on_play_button_pressed():
 	active_scene += 1
 	loadScene(active_scene)
-	$Control.hide()
+	start_menu.hide()
+	win_menu.hide()
+	lose_menu.hide()
 
 func show_win_screen():
-	print('won')
+	print('win')
+	disconnect_signals()
+	win_menu.show()
 
 func show_lose_screen():
 	print('lost')
+	disconnect_signals()
+	lose_menu.show()
+
+func disconnect_signals():
+	active_scene_instance.disconnect('on_win', show_win_screen)
+	active_scene_instance.disconnect('on_lose', show_lose_screen)
