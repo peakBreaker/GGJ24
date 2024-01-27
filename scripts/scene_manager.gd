@@ -20,8 +20,8 @@ func _ready():
 func loadScene(scene_idx: int):
 	var scene = scenes[scene_idx]
 	var instance = scene.instantiate()
-	instance.connect('on_win', on_win)
-	instance.connect('on_lose', on_lose)
+	instance.connect('on_win', show_win_screen)
+	instance.connect('on_lose', show_lose_screen)
 	add_child(instance)
 	if scene_idx > 0:
 		pass
@@ -36,8 +36,8 @@ func _on_play_button_pressed():
 	loadScene(active_scene)
 	$Control.hide()
 
-func on_win():
+func show_win_screen():
 	print('won')
 
-func on_lose():
+func show_lose_screen():
 	print('lost')
