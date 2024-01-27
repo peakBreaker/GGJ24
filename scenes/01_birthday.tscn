@@ -799,7 +799,7 @@ blend_shape_mode = 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qg7cu"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.2
+emission_energy_multiplier = 0.0
 
 [sub_resource type="Animation" id="Animation_0fo2b"]
 resource_name = "Take 001"
@@ -1064,11 +1064,12 @@ script = ExtResource("7_vr6eu")
 stream = ExtResource("8_b4m3r")
 
 [node name="Instruction" type="Node3D" parent="Game"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0465593, 0.0465593, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0821698, -0.0821698, 0)
 
 [node name="Label3D" type="Label3D" parent="Game/Instruction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69132, 1.91593, 2.02295)
-text = "DONT PRESS SPACEBAR"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02735, 2.20144, 2.02295)
+visible = false
+text = "Spacebar"
 
 [node name="anim_keyboard_press" type="Node3D" parent="Game/Instruction"]
 transform = Transform3D(-1.90245, 0, -1.91591, -0.620121, 2.55466, 0.615764, 1.81277, 0.873908, -1.80004, 2.30761, 1.64212, 2.8899)
@@ -1214,7 +1215,7 @@ skin = SubResource("Skin_hxl0e")
 surface_material_override/0 = SubResource("StandardMaterial3D_6u8n2")
 
 [node name="sm_keyboard" type="MeshInstance3D" parent="Game/Instruction/anim_keyboard_press/RootNode"]
-transform = Transform3D(0.922875, -5.96046e-08, -0.792203, 9.31323e-09, 1.21626, -2.98023e-08, 0.792203, -2.98023e-08, 0.922875, 0.0682517, 0.112366, 0.565917)
+transform = Transform3D(0.922875, -2.98023e-08, -0.792203, 9.31323e-09, 1.21626, -2.98023e-08, 0.792203, -2.98023e-08, 0.922875, -0.0722378, 0.153456, 0.51775)
 mesh = SubResource("ArrayMesh_beba4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qg7cu")
