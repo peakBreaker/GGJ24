@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btqf0yoxl22h6"]
+[gd_scene load_steps=6 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
 
@@ -24,21 +24,6 @@ adjustment_saturation = 1.01
 adjustment_color_correction = SubResource("NoiseTexture3D_yxfqq")
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7od47"]
-
-[sub_resource type="GDScript" id="GDScript_d5hq8"]
-resource_name = "lol"
-script/source = "extends Button
-
-func _ready():
-	pressed.connect(printsomething)
-
-func _process(_delta):
-	print(pressed.get_connections().size())
-
-func printsomething():
-	print('something')
-	print(pressed.get_connections())
-"
 
 [node name="Manager" type="Node3D"]
 script = ExtResource("1_55h4j")
@@ -93,7 +78,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Next Level"
-script = SubResource("GDScript_d5hq8")
 
 [node name="WinMenu" type="Panel" parent="Control"]
 unique_name_in_owner = true
@@ -173,5 +157,5 @@ size_flags_vertical = 4
 text = "Play game"
 
 [connection signal="pressed" from="Control/LoseMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Control/WinMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed" flags=6]
-[connection signal="pressed" from="Control/StartMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed" flags=6]
+[connection signal="pressed" from="Control/WinMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/StartMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]

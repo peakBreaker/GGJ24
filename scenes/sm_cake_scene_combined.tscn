@@ -1,186 +1,45 @@
-[gd_scene load_steps=21 format=3 uid="uid://ckutf42vlk856"]
+[gd_scene load_steps=4 format=3 uid="uid://ckutf42vlk856"]
 
 [ext_resource type="PackedScene" uid="uid://w0a6m8sw71ge" path="res://assets/3d/scenes/CakeScene/sm_cakeScene_combined.fbx" id="1_3rukk"]
-[ext_resource type="AudioStream" uid="uid://bnkqm8chw2ck7" path="res://assets/sounds/candle_blowout.mp3" id="2_48ipg"]
-[ext_resource type="Script" path="res://scripts/level_manager.gd" id="2_efp7p"]
-[ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://assets/sounds/background_children_playing.mp3" id="2_vx5xu"]
-[ext_resource type="Script" path="res://scripts/GameController.gd" id="4_srypy"]
-[ext_resource type="SpriteFrames" uid="uid://dbj488fajykff" path="res://assets/2d/Boy.tres" id="5_ilamk"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mqno6"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yis0f"]
 animation = &"Take 001"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tlt4d"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d00b6"]
-"states/Take 001/node" = SubResource("AnimationNodeAnimation_mqno6")
-"states/Take 001/position" = Vector2(353, 104)
-transitions = ["Start", "Take 001", SubResource("AnimationNodeStateMachineTransition_tlt4d")]
-
-[sub_resource type="Animation" id="Animation_xr2tt"]
-length = 19.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.984061, 2, 3, 4.1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_hmcca"]
-resource_name = "sceneanimation"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.078, 0.1, 0), Vector3(-0.111, -0.1, 0), Vector3(-0.078, 0.1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_k0wyt"]
-resource_name = "shake_speed"
-length = 19.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Game/shake_speed_tree:parameters/BlendTree/TimeScale/scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2.98023e-08, 19.2),
-"transitions": PackedFloat32Array(12.1258, 17.7531),
-"update": 0,
-"values": [0.2, 5.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mb32y"]
-_data = {
-"RESET": SubResource("Animation_xr2tt"),
-"instruct_animation_shake": SubResource("Animation_hmcca"),
-"shake_speed": SubResource("Animation_k0wyt")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cvg6r"]
-animation = &"instruct_label_shake"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_sx5dq"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_shsut"]
-graph_offset = Vector2(-140, 39)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_cvg6r")
-nodes/Animation/position = Vector2(-140, 140)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sx5dq")
-nodes/TimeScale/position = Vector2(120, 140)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b2hr2"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d47ir"]
-states/BlendTree/node = SubResource("AnimationNodeBlendTree_shsut")
-states/BlendTree/position = Vector2(450, 75)
-states/Start/position = Vector2(201, 75)
-transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_b2hr2")]
-
-[sub_resource type="Animation" id="Animation_l7fqk"]
-resource_name = "instruct_label_shake"
-loop_mode = 1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(-7.45058e-09, 1, -0.1, -0.1, 0, 0.5, 1, 0.1, 0.1, 0, 1, 1, -0.1, -0.1, 0)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_epriu"]
-_data = {
-"instruct_label_shake": SubResource("Animation_l7fqk")
-}
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_o4goy"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_yis0f")
+nodes/Animation/position = Vector2(130, 70)
+nodes/output/position = Vector2(370, 90)
+node_connections = [&"output", 0, &"Animation"]
 
 [node name="sm_cakeScene_combined" instance=ExtResource("1_3rukk")]
-script = ExtResource("2_efp7p")
 
 [node name="sm_room" parent="RootNode" index="0"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.00210905, 5.00474, -0.0174818)
 cast_shadow = 0
 
 [node name="spotLight1" parent="RootNode" index="4"]
-transform = Transform3D(1, 0, 0, 0, 0.0948901, 0.995488, 0, -0.995488, 0.0948901, -0.22611, 4.91757, 2.23546)
-light_energy = 0.36
-light_negative = true
-spot_range = 4.287
-spot_angle = 59.01
+transform = Transform3D(0.974429, 0.224672, 0.0033545, -0.103098, 0.433784, 0.895099, 0.199648, -0.872556, 0.445855, 0.113229, 4.21766, 4.43056)
+visible = false
+light_energy = 7.825
+light_size = 0.333
+spot_attenuation = 0.707108
 
 [node name="pointLight1" parent="RootNode" index="5"]
-light_energy = 1.315
-light_bake_mode = 0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203394, 2.80879, 3.165)
+light_energy = 5.409
+light_indirect_energy = 6.64
 shadow_enabled = true
+distance_fade_begin = 27.5
+distance_fade_shadow = 3323.51
+distance_fade_length = 16.8
 
 [node name="cam_cake" parent="RootNode" index="6"]
-transform = Transform3D(0.999976, 7.31058e-05, -0.00698086, 3.01952e-10, 0.999945, 0.0104718, 0.00698125, -0.0104715, 0.999921, -0.167919, 2.08095, 4.55985)
+unique_name_in_owner = true
+transform = Transform3D(0.999976, 7.31058e-05, -0.00698086, 3.01952e-10, 0.999945, 0.0104718, 0.00698125, -0.0104715, 0.999921, -0.187267, 2.10997, 8.22211)
 current = true
 near = 0.1
-far = 600015.0
 
-[node name="AnimationPlayer" parent="." index="1"]
-method_call_mode = 1
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
-stream = ExtResource("2_vx5xu")
-autoplay = true
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
-tree_root = SubResource("AnimationNodeStateMachine_d00b6")
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_o4goy")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-
-[node name="Game" type="Node3D" parent="." index="4"]
-script = ExtResource("4_srypy")
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Game" index="0"]
-stream = ExtResource("2_48ipg")
-
-[node name="Instruction" type="Node3D" parent="Game" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06535, -0.06535, 0)
-
-[node name="Label3D" type="Label3D" parent="Game/Instruction" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12356, 2.29765, 2.02295)
-text = "Spacebar"
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game" index="2"]
-transform = Transform3D(0.562634, 0, 0, 0, 0.562634, 0, 0, 0, 0.562634, 0.0579167, 2.31656, 1.00126)
-sprite_frames = ExtResource("5_ilamk")
-animation = &"waiting"
-
-[node name="shake_speed" type="AnimationPlayer" parent="Game" index="3"]
-process_mode = 3
-root_node = NodePath("../..")
-autoplay = "RESET"
-method_call_mode = 1
-libraries = {
-"": SubResource("AnimationLibrary_mb32y")
-}
-
-[node name="shake_speed_tree" type="AnimationTree" parent="Game" index="4"]
-tree_root = SubResource("AnimationNodeStateMachine_d47ir")
-anim_player = NodePath("../instruction_shake")
-active = true
-parameters/BlendTree/TimeScale/scale = 0.574827
-
-[node name="instruction_shake" type="AnimationPlayer" parent="Game" index="5"]
-libraries = {
-"": SubResource("AnimationLibrary_epriu")
-}
