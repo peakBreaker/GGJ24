@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://btqf0yoxl22h6"]
+[gd_scene load_steps=7 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
 
@@ -24,6 +24,21 @@ adjustment_saturation = 1.01
 adjustment_color_correction = SubResource("NoiseTexture3D_yxfqq")
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7od47"]
+
+[sub_resource type="GDScript" id="GDScript_d5hq8"]
+resource_name = "lol"
+script/source = "extends Button
+
+func _ready():
+	pressed.connect(printsomething)
+
+func _process(_delta):
+	print(pressed.get_connections().size())
+
+func printsomething():
+	print('something')
+	print(pressed.get_connections())
+"
 
 [node name="Manager" type="Node3D"]
 script = ExtResource("1_55h4j")
@@ -67,11 +82,18 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="Label" type="Label" parent="Control/LoseMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lose
+"
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="Control/LoseMenu/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Next Level"
+script = SubResource("GDScript_d5hq8")
 
 [node name="WinMenu" type="Panel" parent="Control"]
 unique_name_in_owner = true
@@ -99,6 +121,12 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/WinMenu/HBoxContainer"]
 layout_mode = 2
 alignment = 1
+
+[node name="Label" type="Label" parent="Control/WinMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Win
+"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Control/WinMenu/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -132,12 +160,18 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
+[node name="Label" type="Label" parent="Control/StartMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start
+"
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="Control/StartMenu/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Play game"
 
-[connection signal="pressed" from="Control/LoseMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed" flags=6]
+[connection signal="pressed" from="Control/LoseMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/WinMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed" flags=6]
 [connection signal="pressed" from="Control/StartMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed" flags=6]
