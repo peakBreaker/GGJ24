@@ -1,143 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckutf42vlk856"]
+[gd_scene load_steps=4 format=3 uid="uid://ckutf42vlk856"]
 
-[ext_resource type="PackedScene" path="res://assets/3d/scenes/CakeScene/sm_cakeScene_combined.fbx" id="1_3rukk"]
-[ext_resource type="AudioStream" uid="uid://bnkqm8chw2ck7" path="res://assets/sounds/candle_blowout.mp3" id="2_48ipg"]
-[ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://assets/sounds/background_children_playing.mp3" id="2_vx5xu"]
+[ext_resource type="PackedScene" uid="uid://w0a6m8sw71ge" path="res://assets/3d/scenes/CakeScene/sm_cakeScene_combined.fbx" id="1_3rukk"]
 
-[sub_resource type="GDScript" id="GDScript_i5vng"]
-resource_name = "cameraselect"
-script/source = "extends Node3D
-
-@onready var anim = $AnimationPlayer2
-
-@export var playback_speed: float : 
-	get:
-		return playback_speed
-	set(new_playback_speed): 
-		playback_speed = new_playback_speed
-		if anim:
-			print('Setting new playback speed')
-			print(new_playback_speed)
-			anim.speed_scale = new_playback_speed
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer4.play(\"shake_speed\")
-	#$RootNode/cam_cake.make_current()
-	pass # Replace with function body.
-
-func _input(event):
-	# check if the event is the E key
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_E:
-			print(\"E was pressed\")
-			# then play the sound on the audiostreamplayer
-			$AudioStreamPlayer3D2.play()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mqno6"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yis0f"]
 animation = &"Take 001"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tlt4d"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d00b6"]
-"states/Take 001/node" = SubResource("AnimationNodeAnimation_mqno6")
-"states/Take 001/position" = Vector2(353, 104)
-transitions = ["Start", "Take 001", SubResource("AnimationNodeStateMachineTransition_tlt4d")]
-
-[sub_resource type="Animation" id="Animation_xr2tt"]
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.984061, 2, 2.98049, 4.11213, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_hmcca"]
-resource_name = "sceneanimation"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.078, 0.1, 0), Vector3(-0.111, -0.1, 0), Vector3(-0.078, 0.1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_k0wyt"]
-resource_name = "shake_speed"
-length = 5.0
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0956308, 0.4, 1.036, 1.99231, 3.04425, 4.03243, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"values": [{
-"args": [5.0],
-"method": &"@playback_speed_setter"
-}, {
-"args": [5.0],
-"method": &"@playback_speed_setter"
-}, {
-"args": [4.0],
-"method": &"@playback_speed_setter"
-}, {
-"args": [3.0],
-"method": &"@playback_speed_setter"
-}, {
-"args": [2.0],
-"method": &"@playback_speed_setter"
-}, {
-"args": [1.0],
-"method": &"@playback_speed_setter"
-}, {
-"args": [0.2],
-"method": &"@playback_speed_setter"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mb32y"]
-_data = {
-"RESET": SubResource("Animation_xr2tt"),
-"instruct_animation_shake": SubResource("Animation_hmcca"),
-"shake_speed": SubResource("Animation_k0wyt")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cwvbm"]
-animation = &"instruct_animation_shake"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wa2xa"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d47ir"]
-states/instruct_animation_shake/node = SubResource("AnimationNodeAnimation_cwvbm")
-states/instruct_animation_shake/position = Vector2(422, 100)
-transitions = ["Start", "instruct_animation_shake", SubResource("AnimationNodeStateMachineTransition_wa2xa")]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_o4goy"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_yis0f")
+nodes/Animation/position = Vector2(130, 70)
+nodes/output/position = Vector2(370, 90)
+node_connections = [&"output", 0, &"Animation"]
 
 [node name="sm_cakeScene_combined" instance=ExtResource("1_3rukk")]
-script = SubResource("GDScript_i5vng")
-playback_speed = 4.9019
 
 [node name="sm_room" parent="RootNode" index="0"]
 cast_shadow = 0
@@ -160,49 +34,45 @@ current = true
 near = 0.1
 far = 600015.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="RootNode/cam_cake" index="0"]
-transform = Transform3D(1, 0, 0, 7.27596e-12, 1, 0, -9.31323e-10, 0, 1, 0.00412282, -0.0061841, 0.590509)
-
-[node name="AnimationPlayer" parent="." index="1"]
-method_call_mode = 1
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
-stream = ExtResource("2_vx5xu")
-autoplay = true
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
-tree_root = SubResource("AnimationNodeStateMachine_d00b6")
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_o4goy")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." index="4"]
+[node name="Game" type="Node3D" parent="." index="4"]
+script = ExtResource("4_srypy")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Game" index="0"]
 stream = ExtResource("2_48ipg")
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="5"]
-process_mode = 3
-autoplay = "animationspeed"
-reset_on_save = false
-speed_scale = 5.0
-method_call_mode = 1
-libraries = {
-"": SubResource("AnimationLibrary_mb32y")
-}
+[node name="Instruction" type="Node3D" parent="Game" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0454914, 0.0454914, 0)
 
-[node name="AnimationPlayer4" type="AnimationPlayer" parent="." index="6"]
-process_mode = 3
-autoplay = "shake_speed"
-method_call_mode = 1
-libraries = {
-"": SubResource("AnimationLibrary_mb32y")
-}
-
-[node name="Instruction" type="Node3D" parent="." index="7"]
-
-[node name="Label3D" type="Label3D" parent="Instruction" index="0"]
+[node name="Label3D" type="Label3D" parent="Game/Instruction" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12356, 2.29765, 2.02295)
 text = "Spacebar"
 
-[node name="AnimationTree2" type="AnimationTree" parent="." index="8"]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game" index="2"]
+transform = Transform3D(0.562634, 0, 0, 0, 0.562634, 0, 0, 0, 0.562634, 0.0579167, 2.31656, 1.00126)
+sprite_frames = ExtResource("5_ilamk")
+animation = &"waiting"
+
+[node name="shake_speed" type="AnimationPlayer" parent="Game" index="3"]
+process_mode = 3
+root_node = NodePath("../..")
+autoplay = "RESET"
+method_call_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_mb32y")
+}
+
+[node name="shake_speed_tree" type="AnimationTree" parent="Game" index="4"]
 tree_root = SubResource("AnimationNodeStateMachine_d47ir")
-anim_player = NodePath("../AnimationPlayer2")
+anim_player = NodePath("../instruction_shake")
 active = true
+parameters/BlendTree/TimeScale/scale = 0.574827
+
+[node name="instruction_shake" type="AnimationPlayer" parent="Game" index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_epriu")
+}
