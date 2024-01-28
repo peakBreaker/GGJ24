@@ -1,18 +1,16 @@
-[gd_scene load_steps=68 format=3 uid="uid://g7amvdll30vf"]
+[gd_scene load_steps=66 format=3 uid="uid://g7amvdll30vf"]
 
 [ext_resource type="Script" path="res://scenes/01_birthday.gd" id="1_6klyg"]
-[ext_resource type="Texture2D" uid="uid://br0emkdyqjx8c" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_generics_A1_d.png" id="1_svxgm"]
 [ext_resource type="Texture2D" uid="uid://fsqr3bxcipnm" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_generics_A1_d_1.png" id="2_mi487"]
 [ext_resource type="Texture2D" uid="uid://bjdx4jmft6u60" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_carpet_d.png" id="3_ges33"]
 [ext_resource type="Texture2D" uid="uid://ckj643f6vbmlv" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_blueWall_d.png" id="4_u63bl"]
-[ext_resource type="Texture2D" uid="uid://so0ixsj45tns" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_pinkFloor_a.png" id="5_8cmms"]
-[ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://objects/sounds/background_children_playing.mp3" id="6_krjn5"]
+[ext_resource type="AudioStream" uid="uid://h03l37hk5mss" path="res://assets/sounds/background_children_playing.mp3" id="5_5nxc1"]
 [ext_resource type="SpriteFrames" uid="uid://dbj488fajykff" path="res://assets/2d/Boy.tres" id="9_5bxyc"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="9_og4uq"]
-[ext_resource type="Texture2D" uid="uid://b6x07awv0bay6" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_1.png" id="11_lnuvg"]
-[ext_resource type="Texture2D" uid="uid://davrpnt75dver" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_2.png" id="12_ivpqn"]
-[ext_resource type="Texture2D" uid="uid://bj485u0cs1tyw" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_3.png" id="13_ngb0e"]
-[ext_resource type="Texture2D" uid="uid://84g76phiwbwj" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_4.png" id="14_vy7c0"]
+[ext_resource type="Texture2D" uid="uid://bbp5ucu5lqx7r" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_1.png" id="11_lnuvg"]
+[ext_resource type="Texture2D" uid="uid://dhl6d1oaqdce2" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_2.png" id="12_ivpqn"]
+[ext_resource type="Texture2D" uid="uid://ci81wjobdlq4s" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_3.png" id="13_ngb0e"]
+[ext_resource type="Texture2D" uid="uid://bbhyvit5oqont" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_4.png" id="14_vy7c0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgex3"]
 resource_name = "m_tablecloth"
@@ -56,7 +54,6 @@ resource_name = "m_cake"
 transparency = 4
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-albedo_texture = ExtResource("1_svxgm")
 metallic = 0.2
 roughness = 0.8
 
@@ -553,7 +550,6 @@ shadow_mesh = SubResource("ArrayMesh_fyrqd")
 resource_name = "m_pinkfloor"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-albedo_texture = ExtResource("5_8cmms")
 metallic = 0.2
 roughness = 0.8
 
@@ -901,7 +897,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 
 [node name="background_sounds" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_krjn5")
+stream = ExtResource("5_5nxc1")
 autoplay = true
 
 [node name="Game" type="Node3D" parent="."]
@@ -910,7 +906,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.963139, 1.11915, -2.35671)
 [node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
 
 [node name="Instruction" parent="Game" instance=ExtResource("9_og4uq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.615897, -0.997308, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.976223, -0.794625, 0)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
 transform = Transform3D(0.319747, 0.00530209, 0, -0.00530209, 0.319747, 0, 0, 0, 0.319791, -0.0127378, 1.03708, 1.00126)

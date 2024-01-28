@@ -1,14 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
-[ext_resource type="Texture2D" uid="uid://bxpig3t04wnii" path="res://assets/2d/pixel.png" id="2_4luei"]
+[ext_resource type="Texture2D" uid="uid://dqcubtejbrmxp" path="res://assets/2d/pixel.png" id="2_4luei"]
 [ext_resource type="Script" path="res://scripts/effect_player.gd" id="2_j5rhn"]
-[ext_resource type="Texture2D" uid="uid://cvx3xixpklbrm" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
-[ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://objects/sounds/Fail Sound.mp3" id="6_mojea"]
-[ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://objects/sounds/background_children_playing.mp3" id="7_mnify"]
-[ext_resource type="SpriteFrames" uid="uid://ci4ybpgxlvqqs" path="res://assets/animations/Menus/Screen_logo/Dream 32/opening_animation.tres" id="8_dmm8v"]
-[ext_resource type="AudioStream" uid="uid://2x88soyh8yhv" path="res://assets/sounds/DONTDOTHETHING.mp3" id="8_qcpa4"]
-[ext_resource type="AudioStream" uid="uid://tus0mvppoj7v" path="res://assets/sounds/IntroMusic.mp3" id="9_0by8p"]
+[ext_resource type="Texture2D" uid="uid://b5220hqmu4b72" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
+[ext_resource type="AudioStream" uid="uid://cx7yfmrmaack5" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="5_v085n"]
+[ext_resource type="AudioStream" uid="uid://brune2gtoga6s" path="res://assets/sounds/Fail Sound.mp3" id="6_qum4x"]
+[ext_resource type="AudioStream" uid="uid://h03l37hk5mss" path="res://assets/sounds/background_children_playing.mp3" id="7_yv4jq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdqn"]
 bg_color = Color(0.521569, 0, 0.0862745, 0.215686)
@@ -233,10 +231,10 @@ horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Control/StartMenu"]
 layout_mode = 2
-offset_left = 285.0
-offset_top = 585.0
-offset_right = 606.0
-offset_bottom = 692.0
+offset_left = -40.0
+offset_top = 319.0
+offset_right = 281.0
+offset_bottom = 426.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 72
@@ -272,6 +270,7 @@ hue_variation_min = -1.0
 hue_variation_max = -1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="winning_decorations"]
+stream = ExtResource("5_v085n")
 
 [node name="losing_decorations" type="Node2D" parent="." node_paths=PackedStringArray("particles", "audios")]
 unique_name_in_owner = true
@@ -301,10 +300,10 @@ hue_variation_min = -1.0
 hue_variation_max = -1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="losing_decorations"]
-stream = ExtResource("6_mojea")
+stream = ExtResource("6_qum4x")
 
 [node name="staticsound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("7_mnify")
+stream = ExtResource("7_yv4jq")
 volume_db = -20.0
 autoplay = true
 

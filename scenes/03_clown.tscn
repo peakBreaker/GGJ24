@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/03_clown.gd" id="1_2weup"]
 [ext_resource type="Texture2D" uid="uid://dkj1yjisypbvh" path="res://assets/3d/scenes/StageScene/scene_stage-0bca8110331b6ced91c0e2ec3eb4d89d_t_pinkFloor_a.png" id="2_vjibq"]
-[ext_resource type="AudioStream" uid="uid://c3xdcqn5sey28" path="res://assets/sounds/Circus_clownmusic.mp3" id="3_6j8tk"]
+[ext_resource type="AudioStream" uid="uid://e12yuwu0k1ne" path="res://assets/sounds/Circus_clownmusic.mp3" id="3_6j8tk"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="3_cxjuc"]
 [ext_resource type="Texture2D" uid="uid://i0dnflnimnen" path="res://assets/animations/Circus_juggling/Dream 28/frame_1.png" id="3_nsbyp"]
 [ext_resource type="Texture2D" uid="uid://c26irao7qx4ok" path="res://assets/animations/Circus_juggling/Dream 28/frame_2.png" id="4_ne3hh"]

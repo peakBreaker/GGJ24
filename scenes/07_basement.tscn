@@ -1,9 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://2s328g2p6wq7"]
+[gd_scene load_steps=43 format=3 uid="uid://2s328g2p6wq7"]
 
 [ext_resource type="Script" path="res://scenes/07_basement.gd" id="1_b5xbl"]
 [ext_resource type="Texture2D" uid="uid://dvldeyo318i34" path="res://assets/2d/Basement_wafflehand_trans2.png" id="2_0uud6"]
 [ext_resource type="Texture2D" uid="uid://ci0qmfra1atu" path="res://assets/animations/Basement_clown~/Dream 29/frame_1.png" id="3_6orl8"]
-[ext_resource type="AudioStream" uid="uid://bqgdchk6v7kwt" path="res://assets/sounds/audio_basementHelpme.mp3" id="3_b7h5r"]
 [ext_resource type="Texture2D" uid="uid://b4qamvupum6kp" path="res://assets/animations/Basement_clown~/Dream 29/frame_2.png" id="4_06blh"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="6_ob36q"]
 
@@ -516,7 +515,6 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 
 [node name="background_sounds" type="AudioStreamPlayer3D" parent="scene_cellar"]
-stream = ExtResource("3_b7h5r")
 autoplay = true
 
 [node name="Game" type="Node3D" parent="."]
