@@ -1,7 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://b7rgjqq58giql"]
+[gd_scene load_steps=49 format=3 uid="uid://b7rgjqq58giql"]
 
 [ext_resource type="Script" path="res://scenes/03_clown.gd" id="1_2weup"]
 [ext_resource type="Texture2D" uid="uid://dfgum3hwkm65l" path="res://assets/3d/scenes/StageScene/scene_stage-0bca8110331b6ced91c0e2ec3eb4d89d_t_pinkFloor_a.png" id="2_vjibq"]
+[ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="3_cxjuc"]
+[ext_resource type="Texture2D" uid="uid://i0dnflnimnen" path="res://assets/animations/Circus_juggling/Dream 28/frame_1.png" id="3_nsbyp"]
+[ext_resource type="Texture2D" uid="uid://c26irao7qx4ok" path="res://assets/animations/Circus_juggling/Dream 28/frame_2.png" id="4_ne3hh"]
+[ext_resource type="Texture2D" uid="uid://batt7ohnxrumb" path="res://assets/animations/Circus_juggling/Dream 28/frame_3.png" id="5_qsk6d"]
+[ext_resource type="Texture2D" uid="uid://bsgmvcgiiswk7" path="res://assets/animations/Circus_juggling/Dream 28/frame_4.png" id="6_fvxwl"]
+[ext_resource type="Texture2D" uid="uid://vqkdovswsbu3" path="res://assets/animations/Circus_sadclown~/Dream 28/frame_1.png" id="7_ihc2t"]
+[ext_resource type="AudioStream" uid="uid://bnkqm8chw2ck7" path="res://assets/sounds/candle_blowout.mp3" id="12_lecuk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gmmm"]
 resource_name = "m_pinkfloor"
@@ -308,6 +315,137 @@ advance_mode = 2
 "states/Take 001/position" = Vector2(206, 100)
 transitions = ["Start", "Take 001", SubResource("AnimationNodeStateMachineTransition_jjwp5")]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hhp0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nsbyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ne3hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qsk6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fvxwl")
+}],
+"loop": true,
+"name": &"juggling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ihc2t")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_sn2a1"]
+resource_name = "spacebar"
+length = 20.0
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 2.968, 2.968, 2.968, 15, 1, 1.5, 1.5, 1.5)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbyyt"]
+_data = {
+"spacebar": SubResource("Animation_sn2a1")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oetst"]
+animation = &"spacebar"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xsmue"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uilcu"]
+states/spacebar/node = SubResource("AnimationNodeAnimation_oetst")
+states/spacebar/position = Vector2(336, 87)
+transitions = ["Start", "spacebar", SubResource("AnimationNodeStateMachineTransition_xsmue")]
+
+[sub_resource type="Animation" id="Animation_xr2tt"]
+length = 19.2
+
+[sub_resource type="Animation" id="Animation_hmcca"]
+resource_name = "sceneanimation"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game/Instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="Animation" id="Animation_k0wyt"]
+resource_name = "shake_speed"
+length = 19.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game/shake_speed_tree:parameters/BlendTree/TimeScale/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.2),
+"transitions": PackedFloat32Array(17.1485, 17.7531),
+"update": 0,
+"values": [0.5, 8.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mb32y"]
+_data = {
+"RESET": SubResource("Animation_xr2tt"),
+"instruct_animation_shake": SubResource("Animation_hmcca"),
+"shake_speed": SubResource("Animation_k0wyt")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cvg6r"]
+animation = &"instruct_label_shake"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_sx5dq"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_shsut"]
+graph_offset = Vector2(-492, 14)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_cvg6r")
+nodes/Animation/position = Vector2(-140, 140)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sx5dq")
+nodes/TimeScale/position = Vector2(120, 140)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b2hr2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qsldd"]
+states/BlendTree/node = SubResource("AnimationNodeBlendTree_shsut")
+states/BlendTree/position = Vector2(451, 75)
+states/Start/position = Vector2(201, 75)
+transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_b2hr2")]
+
+[sub_resource type="Animation" id="Animation_l7fqk"]
+resource_name = "instruct_label_shake"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(-7.45058e-09, 1, -0.1, -1.4, 0, 0.5, 1, 1.5, -0.5, 0, 1, 1, -0.1, -1.4, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epriu"]
+_data = {
+"instruct_label_shake": SubResource("Animation_l7fqk")
+}
+
 [node name="lake" type="Node3D"]
 script = ExtResource("1_2weup")
 
@@ -319,7 +457,6 @@ script = ExtResource("1_2weup")
 
 [node name="spotLight3" type="SpotLight3D" parent="scene_stage/RootNode/stage"]
 transform = Transform3D(1, 0, 0, 0, 0.862127, 0.506693, 0, -0.506693, 0.862127, 0, 6.96665, 15.4824)
-light_color = Color(1, 1, 1, 1)
 light_energy = 2.253
 spot_range = 4096.0
 spot_angle = 91.5396
@@ -327,7 +464,6 @@ spot_angle_attenuation = 0.815396
 
 [node name="spotLight2" type="SpotLight3D" parent="scene_stage/RootNode/stage"]
 transform = Transform3D(0.999997, -0.000700423, -0.00218336, 0.00229256, 0.323318, 0.946288, 4.31193e-05, -0.94629, 0.323319, 0, 6.09641, 7.24413)
-light_color = Color(1, 1, 1, 1)
 light_energy = 3.045
 spot_range = 4096.0
 spot_angle = 18.93
@@ -385,3 +521,47 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_xvbb5")
 anim_player = NodePath("../scene_stage/AnimationPlayer")
 active = true
+
+[node name="Game" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.902785, -2.56816, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
+transform = Transform3D(0.450914, 0, 0, 0, 0.450914, 0, 0, 0, 0.450914, -1.17222, 3.52146, 5.03252)
+sprite_frames = SubResource("SpriteFrames_8hhp0")
+animation = &"sad"
+
+[node name="Instruction" parent="Game" instance=ExtResource("3_cxjuc")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.41077, -0.550194, 0)
+
+[node name="Instruction_anim" type="AnimationPlayer" parent="Game"]
+libraries = {
+"": SubResource("AnimationLibrary_dbyyt")
+}
+
+[node name="Instruction_anim_tree" type="AnimationTree" parent="Game"]
+tree_root = SubResource("AnimationNodeStateMachine_uilcu")
+anim_player = NodePath("../Instruction_anim")
+active = true
+
+[node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
+stream = ExtResource("12_lecuk")
+
+[node name="shake_speed" type="AnimationPlayer" parent="Game"]
+process_mode = 3
+root_node = NodePath("../..")
+autoplay = "RESET"
+method_call_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_mb32y")
+}
+
+[node name="shake_speed_tree" type="AnimationTree" parent="Game"]
+tree_root = SubResource("AnimationNodeStateMachine_qsldd")
+anim_player = NodePath("../instruction_shake")
+active = true
+parameters/BlendTree/TimeScale/scale = 0.2
+
+[node name="instruction_shake" type="AnimationPlayer" parent="Game"]
+libraries = {
+"": SubResource("AnimationLibrary_epriu")
+}
