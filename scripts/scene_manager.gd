@@ -14,6 +14,7 @@ var scenes = [
 	preload("res://scenes/03_clown.tscn"),
 	#preload("res://scenes/04_nine_eleven.tscn"),
 	preload("res://scenes/05_pond.tscn"),
+	preload("res://scenes/07_basement.tscn"),
 	#preload("res://scenes/06_well.tscn"),
 	preload("res://scenes/08_jfk.tscn")
 ]

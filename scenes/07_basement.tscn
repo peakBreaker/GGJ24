@@ -530,7 +530,7 @@ animation = &"tied"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.855582, -0.658184, -4.28461)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("6_ob36q")]
-transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 0.981881, -0.791442, 0)
+transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 0.0909922, -1.29257, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3
