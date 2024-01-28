@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://btqf0yoxl22h6"]
+[gd_scene load_steps=11 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
-[ext_resource type="Texture2D" uid="uid://dqcubtejbrmxp" path="res://assets/2d/pixel.png" id="2_4luei"]
+[ext_resource type="Texture2D" uid="uid://bxpig3t04wnii" path="res://assets/2d/pixel.png" id="2_4luei"]
 [ext_resource type="Script" path="res://scripts/effect_player.gd" id="2_j5rhn"]
-[ext_resource type="AudioStream" uid="uid://vwt4vpepmg4h" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="3_r506e"]
-[ext_resource type="AudioStream" uid="uid://dqgktlrepu4dd" path="res://assets/sounds/Fail Sound.mp3" id="4_1mue3"]
+[ext_resource type="Texture2D" uid="uid://cvx3xixpklbrm" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
+[ext_resource type="AudioStream" uid="uid://bwpthe536mkpy" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="3_r506e"]
+[ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://assets/sounds/Fail Sound.mp3" id="4_1mue3"]
 [ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://assets/sounds/background_children_playing.mp3" id="6_426ce"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdqn"]
@@ -20,6 +21,9 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8e1k"]
+texture = ExtResource("2_jt4gd")
 
 [node name="Manager" type="Node3D"]
 script = ExtResource("1_55h4j")
@@ -140,6 +144,7 @@ offset_right = -259.0
 offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i8e1k")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/StartMenu"]
 layout_mode = 1
@@ -155,16 +160,22 @@ layout_mode = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/StartMenu/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Start
 "
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/StartMenu/HBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="Control/StartMenu"]
 layout_mode = 2
+offset_left = 285.0
+offset_top = 585.0
+offset_right = 606.0
+offset_bottom = 692.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Play game"
+theme_override_font_sizes/font_size = 72
+text = "Play"
 
 [node name="winning_decorations" type="Node2D" parent="." node_paths=PackedStringArray("particles", "audios")]
 unique_name_in_owner = true
@@ -235,4 +246,4 @@ autoplay = true
 
 [connection signal="pressed" from="Control/LoseMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/WinMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Control/StartMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/StartMenu/Button" to="." method="_on_play_button_pressed"]
