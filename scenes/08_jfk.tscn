@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dbqunsfvke4jb" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_2.png" id="15_uklpa"]
 [ext_resource type="Texture2D" uid="uid://cktnvq73vlyls" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_3.png" id="16_cxkdl"]
 [ext_resource type="Texture2D" uid="uid://djc57067hj2o2" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_4.png" id="17_4i01p"]
-[ext_resource type="AudioStream" uid="uid://bnkqm8chw2ck7" path="res://assets/sounds/candle_blowout.mp3" id="17_51g6a"]
+[ext_resource type="AudioStream" path="res://assets/sounds/candle_blowout.mp3" id="17_51g6a"]
 [ext_resource type="Texture2D" uid="uid://icww8tesr0h1" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_5.png" id="18_3wi2f"]
 [ext_resource type="Texture2D" uid="uid://c8pkokltuo8xa" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_6.png" id="19_3er5d"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="20_hvdar"]
@@ -699,7 +699,7 @@ animation = &"shock"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144418, 0.341816, -3.28461)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("20_hvdar")]
-transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 0.72404, -0.936477, 0)
+transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 1.27862, -0.624528, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3

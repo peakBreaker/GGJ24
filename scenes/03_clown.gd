@@ -22,6 +22,10 @@ func _input(event):
 	if event.is_action_pressed("the_button") and not game_over:
 		$Game/Instruction.queue_free()
 		await get_tree().create_timer(2.0).timeout
+		# TODO: add the you such sound here
+		await get_tree().create_timer(2.0).timeout
 		anim_sprite.play("sad")
+		sound_player.stream = preload("res://assets/sounds/audio_crying.mp3")
+		sound_player.play()
 		await get_tree().create_timer(2.0).timeout
 		on_lose.emit()

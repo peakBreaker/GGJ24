@@ -1,21 +1,21 @@
 [gd_scene load_steps=54 format=3 uid="uid://b4k3ryrf5sv8n"]
 
 [ext_resource type="Script" path="res://scenes/05_pond.gd" id="1_lem20"]
-[ext_resource type="Texture2D" uid="uid://cgiquput46c43" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_pinkFloor_a.png" id="2_0inhu"]
-[ext_resource type="Texture2D" uid="uid://kq68rc3g4euh" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_generics_A1_d.png" id="3_4d33q"]
-[ext_resource type="Texture2D" uid="uid://bexvtplwo8apk" path="res://assets/3d/scenes/LakeScene/scene_Lake_.fbm/T_kickboy_placeholder.png" id="5_87f42"]
-[ext_resource type="Texture2D" uid="uid://c3hjavefuvuu3" path="res://assets/animations/Pond_falling/Dream 26/frame_1.png" id="6_ocbue"]
-[ext_resource type="Texture2D" uid="uid://bglxpy3281rm" path="res://assets/animations/Pond_falling/Dream 26/frame_2.png" id="7_vaqqu"]
-[ext_resource type="Texture2D" uid="uid://cu1kooog6ycq1" path="res://assets/animations/Pond_falling/Dream 26/frame_3.png" id="8_xs25c"]
-[ext_resource type="Texture2D" uid="uid://b73a1besrbs1i" path="res://assets/animations/Pond_falling/Dream 26/frame_4.png" id="9_72ght"]
-[ext_resource type="Texture2D" uid="uid://mgkmjtoi8ck0" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_1.png" id="10_a0atc"]
-[ext_resource type="Texture2D" uid="uid://d2lrrkqsyybwc" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_2.png" id="11_8u2ax"]
-[ext_resource type="Texture2D" uid="uid://bh6jr6te8wnl6" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_3.png" id="12_mhhu2"]
-[ext_resource type="Texture2D" uid="uid://136etey5iph3" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_4.png" id="13_ypafe"]
-[ext_resource type="AudioStream" uid="uid://nrw0oq8rl1h6" path="res://assets/sounds/audio_boyMutteringLake.mp3" id="14_5cw3k"]
+[ext_resource type="Texture2D" uid="uid://d3heehrv105bm" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_pinkFloor_a.png" id="2_0inhu"]
+[ext_resource type="Texture2D" uid="uid://dge20f454h320" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_generics_A1_d.png" id="3_4d33q"]
+[ext_resource type="Texture2D" uid="uid://mgh4m5uath2b" path="res://assets/3d/scenes/LakeScene/scene_Lake_.fbm/T_kickboy_placeholder.png" id="5_87f42"]
+[ext_resource type="Texture2D" uid="uid://djj6qmufqsgdb" path="res://assets/animations/Pond_falling/Dream 26/frame_1.png" id="6_ocbue"]
+[ext_resource type="Texture2D" uid="uid://b6xhxepeshq7g" path="res://assets/animations/Pond_falling/Dream 26/frame_2.png" id="7_vaqqu"]
+[ext_resource type="Texture2D" uid="uid://b2chlcluj5t0j" path="res://assets/animations/Pond_falling/Dream 26/frame_3.png" id="8_xs25c"]
+[ext_resource type="Texture2D" uid="uid://bj33wkvyi074m" path="res://assets/animations/Pond_falling/Dream 26/frame_4.png" id="9_72ght"]
+[ext_resource type="Texture2D" uid="uid://d2u7hfkhy541k" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_1.png" id="10_a0atc"]
+[ext_resource type="Texture2D" uid="uid://ctw0bypae23dy" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_2.png" id="11_8u2ax"]
+[ext_resource type="Texture2D" uid="uid://u3rqghcdolk" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_3.png" id="12_mhhu2"]
+[ext_resource type="Texture2D" uid="uid://cg6wvaxuify5o" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_4.png" id="13_ypafe"]
+[ext_resource type="AudioStream" uid="uid://d4f3vum5ywoyn" path="res://assets/sounds/audio_boyMutteringLake.mp3" id="14_5cw3k"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="14_kxd4i"]
-[ext_resource type="AudioStream" uid="uid://da2u8lmthyf2j" path="res://assets/sounds/lakeAmbience.wav" id="15_22dx3"]
-[ext_resource type="Texture2D" uid="uid://cpnftaoo0se2y" path="res://assets/2d/Pond_boot_transparent.png" id="16_xlpww"]
+[ext_resource type="AudioStream" uid="uid://j8ihr5c7qmhf" path="res://assets/sounds/lakeAmbience.wav" id="15_22dx3"]
+[ext_resource type="Texture2D" uid="uid://dj6y5eegwq4fl" path="res://assets/2d/Pond_boot_transparent.png" id="16_xlpww"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx1wl"]
 resource_name = "m_grass"
@@ -488,7 +488,7 @@ animation = &"waiting"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.87967, 0.987373, -7.74688)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("14_kxd4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25659, -1.19942, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451507, -1.08978, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3

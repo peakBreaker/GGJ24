@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://g7amvdll30vf"]
+[gd_scene load_steps=69 format=3 uid="uid://g7amvdll30vf"]
 
 [ext_resource type="Script" path="res://scenes/01_birthday.gd" id="1_6klyg"]
 [ext_resource type="Texture2D" uid="uid://dpyiuy73rabr7" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_generics_A1_d.png" id="1_svxgm"]
@@ -7,9 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://ckj643f6vbmlv" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_blueWall_d.png" id="4_u63bl"]
 [ext_resource type="Texture2D" uid="uid://dgt0w8f6d2jdr" path="res://assets/3d/scenes/CakeScene/scene_Birthday_-916110a1516b094675aff311396d93ec_t_pinkFloor_a.png" id="5_8cmms"]
 [ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://assets/sounds/background_children_playing.mp3" id="6_krjn5"]
-[ext_resource type="AudioStream" uid="uid://bnkqm8chw2ck7" path="res://assets/sounds/candle_blowout.mp3" id="8_b4m3r"]
+[ext_resource type="AudioStream" path="res://assets/sounds/candle_blowout.mp3" id="8_b4m3r"]
 [ext_resource type="SpriteFrames" uid="uid://dbj488fajykff" path="res://assets/2d/Boy.tres" id="9_5bxyc"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="9_og4uq"]
+[ext_resource type="Texture2D" uid="uid://bbp5ucu5lqx7r" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_1.png" id="11_lnuvg"]
+[ext_resource type="Texture2D" uid="uid://dhl6d1oaqdce2" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_2.png" id="12_ivpqn"]
+[ext_resource type="Texture2D" uid="uid://ci81wjobdlq4s" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_3.png" id="13_ngb0e"]
+[ext_resource type="Texture2D" uid="uid://bbhyvit5oqont" path="res://assets/animations/Birthday_candle lit/Dream 30/frame_4.png" id="14_vy7c0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgex3"]
 resource_name = "m_tablecloth"
@@ -761,6 +765,26 @@ _data = {
 "instruct_label_shake": SubResource("Animation_l7fqk")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ld1rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_lnuvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ivpqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ngb0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vy7c0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="01_birthday" type="Node3D"]
 script = ExtResource("1_6klyg")
 
@@ -888,7 +912,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.963139, 1.11915, -2.35671)
 stream = ExtResource("8_b4m3r")
 
 [node name="Instruction" parent="Game" instance=ExtResource("9_og4uq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.739577, -0.927738, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.411711, -1.11216, 0)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
 transform = Transform3D(0.319747, 0.00530209, 0, -0.00530209, 0.319747, 0, 0, 0, 0.319791, -0.0127378, 1.03708, 1.00126)
@@ -914,3 +938,7 @@ parameters/BlendTree/TimeScale/scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_epriu")
 }
+
+[node name="candle" type="AnimatedSprite3D" parent="Game"]
+transform = Transform3D(0.10067, 0, 0, 0, 0.10067, 0, 0, 0, 0.10067, 0.0561093, 1.23117, 2.28909)
+sprite_frames = SubResource("SpriteFrames_ld1rb")
