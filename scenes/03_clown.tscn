@@ -531,7 +531,7 @@ sprite_frames = SubResource("SpriteFrames_8hhp0")
 animation = &"sad"
 
 [node name="Instruction" parent="Game" instance=ExtResource("3_cxjuc")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.41077, -0.550194, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.854307, -0.863202, 0)
 
 [node name="Instruction_anim" type="AnimationPlayer" parent="Game"]
 libraries = {
