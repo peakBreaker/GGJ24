@@ -13,4 +13,4 @@ func play():
     for particle in particles:
         particle.emitting = true
     for audio in audios:
-        audio.stop()
+        audio.play()
