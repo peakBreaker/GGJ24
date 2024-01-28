@@ -1,14 +1,10 @@
-[gd_scene load_steps=72 format=3 uid="uid://ysohayo03n1g"]
+[gd_scene load_steps=70 format=3 uid="uid://ysohayo03n1g"]
 
 [ext_resource type="Script" path="res://scenes/08_jfk.gd" id="1_22y5m"]
 [ext_resource type="Texture2D" uid="uid://ccjkhda1sak5t" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_1.png" id="2_bidij"]
-[ext_resource type="Texture2D" uid="uid://b42ib7sdnt2og" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_2.png" id="3_sedmt"]
-[ext_resource type="Texture2D" uid="uid://bvqx6s0q52xy3" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_3.png" id="4_eqbl0"]
-[ext_resource type="Texture2D" uid="uid://fpnr51mbsbnc" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_4.png" id="5_7irod"]
-[ext_resource type="Texture2D" uid="uid://xqvul7djj8hd" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_5.png" id="6_u35m0"]
-[ext_resource type="Texture2D" uid="uid://ccjjtegayo6rn" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_6.png" id="7_bn4dm"]
 [ext_resource type="Texture2D" uid="uid://cdp512u1uow81" path="res://assets/animations/Shot_JFK/Dream 27/frame_1.png" id="8_506wl"]
 [ext_resource type="Texture2D" uid="uid://cn1rkn1w2jw8g" path="res://assets/animations/Shot_JFK/Dream 27/frame_2.png" id="9_l2elx"]
+[ext_resource type="Texture2D" uid="uid://teddqqclnqg5" path="res://assets/animations/Shot_jfk wife shook/Dream 27/frame_1.png" id="9_v11ud"]
 [ext_resource type="Texture2D" uid="uid://q3g0y8fj8e4u" path="res://assets/animations/Shot_JFK/Dream 27/frame_3.png" id="10_werg5"]
 [ext_resource type="Texture2D" uid="uid://cd3sqs66jj8pi" path="res://assets/animations/Shot_JFK/Dream 27/frame_4.png" id="11_xnd7l"]
 [ext_resource type="Texture2D" uid="uid://7dlnjyfh3lna" path="res://assets/animations/Shot_JFK/Dream 27/frame_5.png" id="12_8s5ob"]
@@ -20,33 +16,24 @@
 [ext_resource type="Texture2D" uid="uid://icww8tesr0h1" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_5.png" id="18_3wi2f"]
 [ext_resource type="Texture2D" uid="uid://c8pkokltuo8xa" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_6.png" id="19_3er5d"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="20_hvdar"]
-[ext_resource type="Texture2D" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_frame_1.png" id="20_yxj3r"]
-[ext_resource type="Texture2D" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_frame_1_1.png" id="21_lnkhn"]
-[ext_resource type="Texture2D" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_t_road_d.png" id="22_2kxq6"]
-[ext_resource type="Texture2D" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_t_skysphere_d.png" id="23_surqf"]
-[ext_resource type="Texture2D" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_t_USflag.png" id="24_vvbl5"]
+[ext_resource type="Texture2D" uid="uid://cm2rkyq8twi3i" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_frame_1.png" id="20_yxj3r"]
+[ext_resource type="Texture2D" uid="uid://fkw220al6j7d" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_frame_1_1.png" id="21_lnkhn"]
+[ext_resource type="Texture2D" uid="uid://7ttq2sidog4s" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_t_road_d.png" id="22_2kxq6"]
+[ext_resource type="Texture2D" uid="uid://gsfxfs55r2f2" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_t_skysphere_d.png" id="23_surqf"]
+[ext_resource type="Texture2D" uid="uid://lydtdb6hwbp5" path="res://assets/3d/scenes/President/scene_president-17bc05b142a843c63f82d0e3f0109b86_t_USflag.png" id="24_vvbl5"]
 [ext_resource type="Texture2D" uid="uid://deign2d06p1on" path="res://assets/2d/T_scopeSniper_d.png" id="26_qslu4"]
+
+[sub_resource type="Environment" id="Environment_xgixf"]
+background_mode = 1
+background_color = Color(0.564706, 0.619608, 0.654902, 1)
+adjustment_enabled = true
+adjustment_saturation = 2.35
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0k7gn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_bidij")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_sedmt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_eqbl0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_7irod")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_u35m0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_bn4dm")
 }],
 "loop": true,
 "name": &"dead",
@@ -109,6 +96,14 @@ func _process(delta):
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qo38f"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_v11ud")
+}],
+"loop": true,
+"name": &"shock",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("14_omhqx")
@@ -346,7 +341,6 @@ func _process(delta):
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqft3"]
 resource_name = "surfaceShader2"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("23_surqf")
 metallic = 0.2
 roughness = 0.8
@@ -647,19 +641,47 @@ func _process(delta):
 	self.set_scale(Vector2(scale, scale))
 "
 
+[sub_resource type="GDScript" id="GDScript_mrg3f"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var viewportWidth = get_viewport().size.x
+	var viewportHeight = get_viewport().size.y
+
+	var scale = viewportWidth / self.texture.get_size().x
+
+	# Optional: Center the sprite, required only if the sprite's Offset>Centered checkbox is set
+	self.set_position(Vector2(viewportWidth/2, viewportHeight/2))
+
+	# Set same scale value horizontally/vertically to maintain aspect ratio
+	# If however you don't want to maintain aspect ratio, simply set different
+	# scale along x and y
+	self.set_scale(Vector2(scale, scale))
+"
+
 [node name="08_jfk" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0219011, 0.0206969, 0.00178528)
 script = ExtResource("1_22y5m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xgixf")
 
 [node name="Game" type="Node3D" parent="."]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
 transform = Transform3D(0.347721, 0, 0, 0, 0.347721, 0, 0, 0, 0.347721, -0.286939, 2.84331, 1.37798)
 sprite_frames = SubResource("SpriteFrames_0k7gn")
-animation = &"waving"
+animation = &"dead"
 
 [node name="target" type="Marker3D" parent="Game/AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.37466, 2.08953, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.37502, 0.885027, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Game/AnimatedSprite3D"]
 libraries = {
@@ -670,13 +692,13 @@ script = SubResource("GDScript_ymqm4")
 [node name="wife_AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
 transform = Transform3D(0.347721, 0, 0, 0, 0.347721, 0, 0, 0, 0.347721, -2.32593, 2.94116, 0.283594)
 sprite_frames = SubResource("SpriteFrames_qo38f")
-animation = &"waving"
+animation = &"shock"
 
 [node name="Instruct" type="Node3D" parent="Game"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144418, 0.341816, -3.28461)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("20_hvdar")]
-transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 1.28525, -0.620797, 0)
+transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 0.899634, -0.837706, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3
@@ -732,7 +754,6 @@ transform = Transform3D(0, 0, -0.0124625, 0, 0.0124625, 0, 0.0124625, 0, 0, 0, -
 
 [node name="directionalLight3" type="DirectionalLight3D" parent="scene_president/RootNode/president"]
 transform = Transform3D(0.000229981, -0.00978805, -0.00771073, -0.00269966, 0.00748972, -0.00958802, 0.0121644, 0.00184725, -0.0019821, 0, 0.0525529, 0)
-light_color = Color(1, 1, 1, 1)
 
 [node name="sm_skysphere1" type="MeshInstance3D" parent="scene_president/RootNode/president"]
 mesh = SubResource("ArrayMesh_m78q7")
@@ -769,3 +790,10 @@ grow_vertical = 2
 position = Vector2(1916, 1068)
 texture = ExtResource("26_qslu4")
 script = SubResource("GDScript_lgqt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(1843, 1004)
+scale = Vector2(1.60827, 1.60827)
+texture = ExtResource("24_vvbl5")
+script = SubResource("GDScript_mrg3f")

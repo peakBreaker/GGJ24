@@ -1,36 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://btqf0yoxl22h6"]
+[gd_scene load_steps=2 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_5r3ci"]
-noise_type = 0
-frequency = 0.0125
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_yxfqq"]
-seamless_blend_skirt = 0.25
-normalize = false
-noise = SubResource("FastNoiseLite_5r3ci")
-
-[sub_resource type="Environment" id="Environment_xwuty"]
-background_mode = 2
-tonemap_exposure = 0.5
-fog_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.01
-volumetric_fog_sky_affect = 0.85
-adjustment_brightness = 1.2
-adjustment_contrast = 0.7
-adjustment_saturation = 1.01
-adjustment_color_correction = SubResource("NoiseTexture3D_yxfqq")
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7od47"]
-
 [node name="Manager" type="Node3D"]
 script = ExtResource("1_55h4j")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_xwuty")
-camera_attributes = SubResource("CameraAttributesPractical_7od47")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
