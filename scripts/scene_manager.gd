@@ -5,6 +5,8 @@ var active_scene_instance
 @onready var lose_menu: Panel = %LoseMenu
 @onready var win_menu: Panel = %WinMenu
 @onready var start_menu: Panel = %StartMenu
+@onready var winning_decorations: EffectPlayer = %winning_decorations
+@onready var losing_decorations: EffectPlayer = %losing_decorations
 
 var scenes = [
 	preload("res://scenes/01_birthday.tscn"),
@@ -33,14 +35,18 @@ func loadScene(scene_idx: int):
 func _on_play_button_pressed():
 	loadScene(active_scene)
 	active_scene += 1
+	winning_decorations.stop()
+	losing_decorations.stop()
 	start_menu.hide()
 	win_menu.hide()
 	lose_menu.hide()
 
 func show_win_screen():
 	print('win')
+	winning_decorations.play()
 	win_menu.show()
 
 func show_lose_screen():
 	print('lost')
+	losing_decorations.play()
 	lose_menu.show()

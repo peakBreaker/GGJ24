@@ -28,22 +28,22 @@ func _ready():
 		anim_sprite.play("waiting")
 		sound_player.stream = preload("res://assets/sounds/candle_blowout.mp3")
 		sound_player.play()
-	
+
 func _input(event):
 	# handle the space button here
 	if event.is_action_pressed("the_button"):
 		$Game/Instruction.queue_free()
 		game_over = true
 		$background_sounds.stop()
-		
+
 		await get_tree().create_timer(2.0).timeout
 		on_lose.emit()
 		anim_sprite.play("crying")
 		sound_player.stream = preload("res://assets/sounds/audio_crying.mp3")
 		sound_player.play()
-		
-			
-	
+
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
