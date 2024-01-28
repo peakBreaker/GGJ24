@@ -22,10 +22,25 @@ var scenes = [
 func _ready():
 	pass
 
+var vol_tween
 func loadScene(scene_idx: int):
 	var scene = scenes[scene_idx]
 	if(active_scene_instance):
 		active_scene_instance.queue_free()
+
+	$staticsound.stop()
+	var staticsound = preload("res://assets/sounds/staticsound.wav")
+	staticsound.set_loop_mode(staticsound.LOOP_FORWARD)
+	staticsound.set_loop_begin(0)
+	staticsound.set_loop_end(48000)
+	$staticsound.stream = staticsound
+	$staticsound.play()
+	#print($staticsound.volume_db)
+	if vol_tween:
+		vol_tween.kill()
+	vol_tween = get_tree().create_tween()
+	$staticsound.volume_db = -14
+	vol_tween.tween_property($staticsound, "volume_db", 5, 14)
 	active_scene_instance = scene.instantiate()
 	print('loading scene %s' % active_scene_instance.name)
 	active_scene_instance.connect('on_win', show_win_screen)
