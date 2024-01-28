@@ -40,6 +40,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("the_button"):
 		game_over = true
-		on_win.emit()
 		$Control/Sprite2D.show()
+		sound_player.stream = preload("res://assets/sounds/EagleSquark.wav")
+		sound_player.play()
+		await get_tree().create_timer(2.0).timeout
+		on_win.emit()		
+		
 		# make hand appear
