@@ -9,6 +9,7 @@ var game_over = false
 @onready var hand_animation: AnimationTree = $Game/hand_animation_tree
 @onready var hand_sprite: Sprite3D = $Game/hand_teeth
 @onready var boy_audio = $Game/boy_audio
+@onready var instruct = $Game/Instruct
 
 func _ready():
     boy_animation.play("talking")
@@ -26,6 +27,7 @@ func _input(event):
         boy_animation.play("shook")
         hand_animation.active = true
         boy_audio.stop()
+        instruct.hide()
 
         await get_tree().create_timer(5).timeout
         on_lose.emit()

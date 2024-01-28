@@ -374,7 +374,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Instruction")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(-7.45058e-09, 1, -0.1, -1.4, 0, 0.5, 1, 1.5, -0.5, 0, 1, 1, -0.1, -1.4, 0)
+tracks/0/keys = PackedFloat32Array(-7.45058e-09, 1, -0.1, -0.4, 2.08165e-12, 0.5, 1, 0.2, -0.5, 2.08165e-12, 1, 1, -0.1, -0.4, 2.08165e-12)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epriu"]
 _data = {
@@ -490,7 +490,7 @@ animation = &"waiting"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.87967, 0.987373, -7.74688)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("14_kxd4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38697, -0.563581, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74813, -0.922927, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3

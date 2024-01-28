@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bach71pvih7kk"]
+[gd_scene load_steps=55 format=3 uid="uid://bach71pvih7kk"]
 
 [ext_resource type="Script" path="res://scenes/02_teeth.gd" id="1_u4d04"]
 [ext_resource type="Texture2D" uid="uid://yl8t10frwnam" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_carpet_d.png" id="2_5bjx6"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b8amrfhy6jh76" path="res://assets/sounds/audio_talkingWithFood.mp3" id="8_lbcwd"]
 [ext_resource type="Texture2D" uid="uid://c05if12h4fiu1" path="res://assets/2d/Teeth_handpicking.png" id="9_vyo7f"]
 [ext_resource type="AudioStream" uid="uid://khtaew32gxfh" path="res://assets/sounds/Munching.mp3" id="10_pnn5d"]
+[ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="11_hji0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s01s2"]
 resource_name = "m_carpet"
@@ -548,6 +549,82 @@ _data = {
 "pick_teeth": SubResource("Animation_lv63a")
 }
 
+[sub_resource type="Animation" id="Animation_xr2tt"]
+length = 19.2
+
+[sub_resource type="Animation" id="Animation_hmcca"]
+resource_name = "sceneanimation"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game/Instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="Animation" id="Animation_k0wyt"]
+resource_name = "shake_speed"
+length = 19.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Instruct/instruction_shake_tree:parameters/BlendTree/TimeScale/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 16.1),
+"transitions": PackedFloat32Array(6.72717, 4.28709),
+"update": 0,
+"values": [0.2, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mb32y"]
+_data = {
+"RESET": SubResource("Animation_xr2tt"),
+"instruct_animation_shake": SubResource("Animation_hmcca"),
+"shake_speed": SubResource("Animation_k0wyt")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cvg6r"]
+animation = &"instruct_label_shake"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_sx5dq"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_shsut"]
+graph_offset = Vector2(-492, 14)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_cvg6r")
+nodes/Animation/position = Vector2(-140, 140)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sx5dq")
+nodes/TimeScale/position = Vector2(120, 140)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b2hr2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_14sjs"]
+states/BlendTree/node = SubResource("AnimationNodeBlendTree_shsut")
+states/BlendTree/position = Vector2(449, 75)
+states/Start/position = Vector2(201, 75)
+transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_b2hr2")]
+
+[sub_resource type="Animation" id="Animation_l7fqk"]
+resource_name = "instruct_label_shake"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(-7.45058e-09, 1, -0.1, -0.4, 2.08165e-12, 0.5, 1, 0.2, -0.5, 2.08165e-12, 1, 1, -0.1, -0.4, 2.08165e-12)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epriu"]
+_data = {
+"instruct_label_shake": SubResource("Animation_l7fqk")
+}
+
 [node name="02_teeth" type="Node3D"]
 script = ExtResource("1_u4d04")
 
@@ -658,3 +735,29 @@ libraries = {
 }
 
 [node name="chew_audio" type="AudioStreamPlayer3D" parent="Game"]
+
+[node name="Instruct" type="Node3D" parent="Game"]
+transform = Transform3D(-0.983303, -7.50337e-09, -0.181978, -0.153034, 0.541121, 0.826903, 0.0984722, 0.840945, -0.532086, 0.123015, -1.32308, 1.47057)
+
+[node name="Instruction" parent="Game/Instruct" instance=ExtResource("11_hji0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.160703, -0.486901, 2.08165e-12)
+
+[node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
+process_mode = 3
+root_node = NodePath("../..")
+autoplay = "RESET"
+method_call_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_mb32y")
+}
+
+[node name="instruction_shake_tree" type="AnimationTree" parent="Game/Instruct"]
+tree_root = SubResource("AnimationNodeStateMachine_14sjs")
+anim_player = NodePath("../instruction_shake")
+active = true
+parameters/BlendTree/TimeScale/scale = 0.2
+
+[node name="instruction_shake" type="AnimationPlayer" parent="Game/Instruct"]
+libraries = {
+"": SubResource("AnimationLibrary_epriu")
+}
