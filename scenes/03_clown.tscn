@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b7rgjqq58giql"]
+[gd_scene load_steps=49 format=3 uid="uid://b7rgjqq58giql"]
 
 [ext_resource type="Script" path="res://scenes/03_clown.gd" id="1_2weup"]
 [ext_resource type="Texture2D" uid="uid://dfgum3hwkm65l" path="res://assets/3d/scenes/StageScene/scene_stage-0bca8110331b6ced91c0e2ec3eb4d89d_t_pinkFloor_a.png" id="2_vjibq"]
@@ -352,7 +352,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Instruction")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 2.96773, 2.96773, 2.96773, 15, 1, 1.5, 1.5, 1.5)
+tracks/0/keys = PackedFloat32Array(0, 1, 2.968, 2.968, 2.968, 15, 1, 1.5, 1.5, 1.5)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dbyyt"]
 _data = {
@@ -372,35 +372,18 @@ transitions = ["Start", "spacebar", SubResource("AnimationNodeStateMachineTransi
 
 [sub_resource type="Animation" id="Animation_xr2tt"]
 length = 19.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.984061, 2, 3, 4.1, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_hmcca"]
 resource_name = "sceneanimation"
 length = 0.1
 loop_mode = 1
-tracks/0/type = "value"
+tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Instruction:position")
+tracks/0/path = NodePath("Game/Instruction")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.078, 0.1, 0), Vector3(-0.111, -0.1, 0), Vector3(-0.078, 0.1, 0)]
-}
+tracks/0/keys = PackedFloat32Array()
 
 [sub_resource type="Animation" id="Animation_k0wyt"]
 resource_name = "shake_speed"
@@ -412,10 +395,10 @@ tracks/0/path = NodePath("Game/shake_speed_tree:parameters/BlendTree/TimeScale/s
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.98023e-08, 19.2),
-"transitions": PackedFloat32Array(12.1258, 17.7531),
+"times": PackedFloat32Array(0, 19.2),
+"transitions": PackedFloat32Array(17.1485, 17.7531),
 "update": 0,
-"values": [0.2, 5.0]
+"values": [0.5, 8.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mb32y"]
@@ -431,7 +414,7 @@ animation = &"instruct_label_shake"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_sx5dq"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_shsut"]
-graph_offset = Vector2(-140, 39)
+graph_offset = Vector2(-492, 14)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cvg6r")
 nodes/Animation/position = Vector2(-140, 140)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sx5dq")
@@ -443,9 +426,25 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qsldd"]
 states/BlendTree/node = SubResource("AnimationNodeBlendTree_shsut")
-states/BlendTree/position = Vector2(450, 75)
+states/BlendTree/position = Vector2(451, 75)
 states/Start/position = Vector2(201, 75)
 transitions = ["Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_b2hr2")]
+
+[sub_resource type="Animation" id="Animation_l7fqk"]
+resource_name = "instruct_label_shake"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(-7.45058e-09, 1, -0.1, -1.4, 0, 0.5, 1, 1.5, -0.5, 0, 1, 1, -0.1, -1.4, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epriu"]
+_data = {
+"instruct_label_shake": SubResource("Animation_l7fqk")
+}
 
 [node name="lake" type="Node3D"]
 script = ExtResource("1_2weup")
@@ -524,14 +523,15 @@ anim_player = NodePath("../scene_stage/AnimationPlayer")
 active = true
 
 [node name="Game" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.902785, -2.56816, 0)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
-transform = Transform3D(0.450914, 0, 0, 0, 0.450914, 0, 0, 0, 0.450914, 0.0321811, 1.23904, 5.03252)
+transform = Transform3D(0.450914, 0, 0, 0, 0.450914, 0, 0, 0, 0.450914, -1.17222, 3.52146, 5.03252)
 sprite_frames = SubResource("SpriteFrames_8hhp0")
 animation = &"sad"
 
 [node name="Instruction" parent="Game" instance=ExtResource("3_cxjuc")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.686815, -3.11142, 0.684633)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.41077, -0.550194, 0)
 
 [node name="Instruction_anim" type="AnimationPlayer" parent="Game"]
 libraries = {
@@ -557,6 +557,11 @@ libraries = {
 
 [node name="shake_speed_tree" type="AnimationTree" parent="Game"]
 tree_root = SubResource("AnimationNodeStateMachine_qsldd")
-anim_player = NodePath("../shake_speed")
+anim_player = NodePath("../instruction_shake")
 active = true
-parameters/BlendTree/TimeScale/scale = 0.200221
+parameters/BlendTree/TimeScale/scale = 0.2
+
+[node name="instruction_shake" type="AnimationPlayer" parent="Game"]
+libraries = {
+"": SubResource("AnimationLibrary_epriu")
+}
