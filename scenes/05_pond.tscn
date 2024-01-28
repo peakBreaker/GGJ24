@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://b4k3ryrf5sv8n"]
+[gd_scene load_steps=56 format=3 uid="uid://b4k3ryrf5sv8n"]
 
 [ext_resource type="Script" path="res://scenes/05_pond.gd" id="1_lem20"]
 [ext_resource type="Texture2D" uid="uid://d3heehrv105bm" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_pinkFloor_a.png" id="2_0inhu"]
+[ext_resource type="AudioStream" uid="uid://cqxrl3bwekvk8" path="res://assets/sounds/bootkick.wav" id="2_u4021"]
 [ext_resource type="Texture2D" uid="uid://dge20f454h320" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_generics_A1_d.png" id="3_4d33q"]
 [ext_resource type="Texture2D" uid="uid://mgh4m5uath2b" path="res://assets/3d/scenes/LakeScene/scene_Lake_.fbm/T_kickboy_placeholder.png" id="5_87f42"]
 [ext_resource type="Texture2D" uid="uid://djj6qmufqsgdb" path="res://assets/animations/Pond_falling/Dream 26/frame_1.png" id="6_ocbue"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="14_kxd4i"]
 [ext_resource type="AudioStream" uid="uid://j8ihr5c7qmhf" path="res://assets/sounds/lakeAmbience.wav" id="15_22dx3"]
 [ext_resource type="Texture2D" uid="uid://dj6y5eegwq4fl" path="res://assets/2d/Pond_boot_transparent.png" id="16_xlpww"]
+[ext_resource type="AudioStream" uid="uid://dq843xaaepf2q" path="res://assets/sounds/splash_01.mp3" id="17_ji25u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx1wl"]
 resource_name = "m_grass"
@@ -391,14 +393,14 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("PondBoot")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -2.83299, 1.44703, -5.33143, 0.3, 1, -0.283, 2.297, -4.131, 0.6, 1, 0.297, 2.88271, -4.441, 1, 1, 0.297, 4.68312, -4.441)
+tracks/0/keys = PackedFloat32Array(0, 1, -2.83299, 1.44703, -5.33143, 0.3, 1, -0.283, 2.297, -4.131, 0.7, 1, 0.297, 2.88271, -4.441, 1, 1, 0.297, 4.803, -4.441, 1.3, 1, -0.0218115, 4.58099, -4.441, 1.8, 1, -1.68456, 2.36218, -4.441)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("PondBoot")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 2.08165e-12, 2.08165e-12, -0.667, 0.745, 0.3, 1, 0, 0, 0, 1, 0.5, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1)
+tracks/1/keys = PackedFloat32Array(0, 1, 2.08165e-12, 2.08165e-12, -0.667, 0.745, 0.5, 1, 0, 0, 0, 1, 1, 1, -0.124, -0.411, 0.26, 0.865, 1.2, 1, 0, 0, 0, 1, 1.3, 1, 0, 0, 0, 1, 1.6, 1, 0, 0, 0, 1, 2.1, 1, 0, 0, 0, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2l6q"]
 _data = {
@@ -410,7 +412,6 @@ _data = {
 animation = &"pond_boot_kick"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_2iu61"]
-graph_offset = Vector2(-100.736, -9.47934)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ny6t3")
 nodes/Animation/position = Vector2(160, 80)
 nodes/output/position = Vector2(370, 80)
@@ -418,6 +419,7 @@ node_connections = [&"output", 0, &"Animation"]
 
 [node name="05_pond" type="Node3D"]
 script = ExtResource("1_lem20")
+kick_audio = ExtResource("2_u4021")
 
 [node name="scene_Lake_" type="Node3D" parent="."]
 
@@ -488,7 +490,7 @@ animation = &"waiting"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.87967, 0.987373, -7.74688)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("14_kxd4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.451507, -1.08978, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662169, -0.97128, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3
@@ -518,8 +520,12 @@ autoplay = true
 stream = ExtResource("15_22dx3")
 autoplay = true
 
+[node name="splash" type="AudioStreamPlayer3D" parent="Game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51437, 0, -7.85699)
+stream = ExtResource("17_ji25u")
+
 [node name="PondBoot" type="Sprite3D" parent="Game"]
-transform = Transform3D(0.153, 0, 0, 0, 0.153, 0, 0, 0, 0.153, 0.297, 4.68312, -4.441)
+transform = Transform3D(0.153, 0, 0, 0, 0.153, 0, 0, 0, 0.153, -1.68456, 2.36218, -4.441)
 texture = ExtResource("16_xlpww")
 
 [node name="PondKick" type="AnimationPlayer" parent="Game"]
