@@ -230,7 +230,6 @@ stream = ExtResource("4_1mue3")
 
 [node name="staticsound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_426ce")
-volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="Control/LoseMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
