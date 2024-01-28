@@ -793,7 +793,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
 [node name="RootNode" type="Node3D" parent="scene_Birthday_"]
 
 [node name="cam_cake" type="Camera3D" parent="scene_Birthday_/RootNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170782, 2.03333, 7.40748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.167919, 2.08095, 4.55985)
 rotation_edit_mode = 2
 current = true
 fov = 54.1841
@@ -910,7 +910,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.963139, 1.11915, -2.35671)
 [node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
 
 [node name="Instruction" parent="Game" instance=ExtResource("9_og4uq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726667, -0.935, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.615897, -0.997308, 0)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
 transform = Transform3D(0.319747, 0.00530209, 0, -0.00530209, 0.319747, 0, 0, 0, 0.319791, -0.0127378, 1.03708, 1.00126)
