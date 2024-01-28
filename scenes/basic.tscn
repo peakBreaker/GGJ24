@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
-[ext_resource type="Texture2D" uid="uid://dqcubtejbrmxp" path="res://assets/2d/pixel.png" id="2_4luei"]
+[ext_resource type="Texture2D" uid="uid://bxpig3t04wnii" path="res://assets/2d/pixel.png" id="2_4luei"]
 [ext_resource type="Script" path="res://scripts/effect_player.gd" id="2_j5rhn"]
-[ext_resource type="Texture2D" uid="uid://b5220hqmu4b72" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
-[ext_resource type="AudioStream" uid="uid://vwt4vpepmg4h" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="3_r506e"]
-[ext_resource type="AudioStream" uid="uid://dqgktlrepu4dd" path="res://assets/sounds/Fail Sound.mp3" id="4_1mue3"]
+[ext_resource type="Texture2D" uid="uid://cvx3xixpklbrm" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
+[ext_resource type="AudioStream" uid="uid://bwpthe536mkpy" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="3_r506e"]
+[ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://assets/sounds/Fail Sound.mp3" id="4_1mue3"]
 [ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://assets/sounds/background_children_playing.mp3" id="6_426ce"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdqn"]

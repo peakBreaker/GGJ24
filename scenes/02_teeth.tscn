@@ -740,7 +740,7 @@ libraries = {
 transform = Transform3D(-0.983303, -7.50337e-09, -0.181978, -0.153034, 0.541121, 0.826903, 0.0984722, 0.840945, -0.532086, 0.123015, -1.32308, 1.47057)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("11_hji0q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.160703, -0.486901, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214692, -0.44049, 2.08165e-12)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3
