@@ -1,33 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://btqf0yoxl22h6"]
+[gd_scene load_steps=8 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
 [ext_resource type="Texture2D" uid="uid://bxpig3t04wnii" path="res://assets/2d/pixel.png" id="2_4luei"]
 [ext_resource type="Script" path="res://scripts/effect_player.gd" id="2_j5rhn"]
 [ext_resource type="AudioStream" uid="uid://bwpthe536mkpy" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="3_r506e"]
 [ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://assets/sounds/Fail Sound.mp3" id="4_1mue3"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_5r3ci"]
-noise_type = 0
-frequency = 0.0125
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_yxfqq"]
-seamless_blend_skirt = 0.25
-normalize = false
-noise = SubResource("FastNoiseLite_5r3ci")
-
-[sub_resource type="Environment" id="Environment_xwuty"]
-background_mode = 2
-tonemap_exposure = 0.5
-fog_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.01
-volumetric_fog_sky_affect = 0.85
-adjustment_brightness = 1.2
-adjustment_contrast = 0.7
-adjustment_saturation = 1.01
-adjustment_color_correction = SubResource("NoiseTexture3D_yxfqq")
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7od47"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdqn"]
 bg_color = Color(0.521569, 0, 0.0862745, 0.215686)
