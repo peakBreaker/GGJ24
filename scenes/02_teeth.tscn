@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://tfdd836dit0n" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_pinkFloor_a.png" id="5_g4rjf"]
 [ext_resource type="Texture2D" uid="uid://cjdrsqiaq4cat" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_frame_01.png" id="6_k7qfy"]
 [ext_resource type="SpriteFrames" uid="uid://ccquu87mfbism" path="res://assets/animations/Boy_teeth/Dream 25/boy_teeth.tres" id="7_cx31g"]
-[ext_resource type="AudioStream" uid="uid://b8amrfhy6jh76" path="res://assets/sounds/audio_talkingWithFood.mp3" id="8_lbcwd"]
+[ext_resource type="AudioStream" uid="uid://b8amrfhy6jh76" path="res://objects/sounds/audio_talkingWithFood.mp3" id="8_ydrsl"]
 [ext_resource type="Texture2D" uid="uid://c05if12h4fiu1" path="res://assets/2d/Teeth_handpicking.png" id="9_vyo7f"]
-[ext_resource type="AudioStream" uid="uid://khtaew32gxfh" path="res://assets/sounds/Munching.mp3" id="10_pnn5d"]
+[ext_resource type="AudioStream" uid="uid://khtaew32gxfh" path="res://objects/sounds/Munching.mp3" id="10_ie3hr"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="11_hji0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s01s2"]
@@ -486,7 +486,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("10_pnn5d")
+"stream": ExtResource("10_ie3hr")
 }],
 "times": PackedFloat32Array(2.5)
 }
@@ -715,7 +715,7 @@ sprite_frames = ExtResource("7_cx31g")
 animation = &"shook"
 
 [node name="boy_audio" type="AudioStreamPlayer3D" parent="Game"]
-stream = ExtResource("8_lbcwd")
+stream = ExtResource("8_ydrsl")
 autoplay = true
 
 [node name="static_audio" type="AudioStreamPlayer3D" parent="Game"]
@@ -740,7 +740,7 @@ libraries = {
 transform = Transform3D(-0.983303, -7.50337e-09, -0.181978, -0.153034, 0.541121, 0.826903, 0.0984722, 0.840945, -0.532086, 0.123015, -1.32308, 1.47057)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("11_hji0q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214692, -0.44049, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0743347, -0.408555, 2.08165e-12)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3

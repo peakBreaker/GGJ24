@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bxpig3t04wnii" path="res://assets/2d/pixel.png" id="2_4luei"]
 [ext_resource type="Script" path="res://scripts/effect_player.gd" id="2_j5rhn"]
 [ext_resource type="Texture2D" uid="uid://cvx3xixpklbrm" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
-[ext_resource type="AudioStream" uid="uid://bwpthe536mkpy" path="res://assets/sounds/Kids Cheering Sound Effect.mp3" id="3_r506e"]
-[ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://assets/sounds/Fail Sound.mp3" id="4_1mue3"]
-[ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://assets/sounds/background_children_playing.mp3" id="6_426ce"]
+[ext_resource type="AudioStream" uid="uid://bwpthe536mkpy" path="res://objects/sounds/Kids Cheering Sound Effect.mp3" id="5_jx5sj"]
+[ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://objects/sounds/Fail Sound.mp3" id="6_mojea"]
+[ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://objects/sounds/background_children_playing.mp3" id="7_mnify"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdqn"]
 bg_color = Color(0.521569, 0, 0.0862745, 0.215686)
@@ -208,7 +208,7 @@ hue_variation_min = -1.0
 hue_variation_max = -1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="winning_decorations"]
-stream = ExtResource("3_r506e")
+stream = ExtResource("5_jx5sj")
 
 [node name="losing_decorations" type="Node2D" parent="." node_paths=PackedStringArray("particles", "audios")]
 unique_name_in_owner = true
@@ -238,10 +238,10 @@ hue_variation_min = -1.0
 hue_variation_max = -1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="losing_decorations"]
-stream = ExtResource("4_1mue3")
+stream = ExtResource("6_mojea")
 
 [node name="staticsound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_426ce")
+stream = ExtResource("7_mnify")
 volume_db = -20.0
 autoplay = true
 

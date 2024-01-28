@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/05_pond.gd" id="1_lem20"]
 [ext_resource type="Texture2D" uid="uid://d3heehrv105bm" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_pinkFloor_a.png" id="2_0inhu"]
-[ext_resource type="AudioStream" uid="uid://cqxrl3bwekvk8" path="res://assets/sounds/bootkick.wav" id="2_u4021"]
+[ext_resource type="AudioStream" uid="uid://cqxrl3bwekvk8" path="res://objects/sounds/bootkick.wav" id="2_7nm2v"]
 [ext_resource type="Texture2D" uid="uid://dge20f454h320" path="res://assets/3d/scenes/LakeScene/scene_Lake_-051a5e5e8ccf15dbc681dfcd8bb7aeb7_t_generics_A1_d.png" id="3_4d33q"]
 [ext_resource type="Texture2D" uid="uid://mgh4m5uath2b" path="res://assets/3d/scenes/LakeScene/scene_Lake_.fbm/T_kickboy_placeholder.png" id="5_87f42"]
 [ext_resource type="Texture2D" uid="uid://djj6qmufqsgdb" path="res://assets/animations/Pond_falling/Dream 26/frame_1.png" id="6_ocbue"]
@@ -13,11 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://ctw0bypae23dy" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_2.png" id="11_8u2ax"]
 [ext_resource type="Texture2D" uid="uid://u3rqghcdolk" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_3.png" id="12_mhhu2"]
 [ext_resource type="Texture2D" uid="uid://cg6wvaxuify5o" path="res://assets/animations/Pond_on the dock with stick/Dream 26/frame_4.png" id="13_ypafe"]
-[ext_resource type="AudioStream" uid="uid://d4f3vum5ywoyn" path="res://assets/sounds/audio_boyMutteringLake.mp3" id="14_5cw3k"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="14_kxd4i"]
-[ext_resource type="AudioStream" uid="uid://j8ihr5c7qmhf" path="res://assets/sounds/lakeAmbience.wav" id="15_22dx3"]
+[ext_resource type="AudioStream" uid="uid://d4f3vum5ywoyn" path="res://objects/sounds/audio_boyMutteringLake.mp3" id="15_p32fw"]
+[ext_resource type="AudioStream" uid="uid://j8ihr5c7qmhf" path="res://objects/sounds/lakeAmbience.wav" id="16_hsqob"]
 [ext_resource type="Texture2D" uid="uid://dj6y5eegwq4fl" path="res://assets/2d/Pond_boot_transparent.png" id="16_xlpww"]
-[ext_resource type="AudioStream" uid="uid://dq843xaaepf2q" path="res://assets/sounds/splash_01.mp3" id="17_ji25u"]
+[ext_resource type="AudioStream" uid="uid://dq843xaaepf2q" path="res://objects/sounds/splash_01.mp3" id="17_ylym4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx1wl"]
 resource_name = "m_grass"
@@ -419,7 +419,7 @@ node_connections = [&"output", 0, &"Animation"]
 
 [node name="05_pond" type="Node3D"]
 script = ExtResource("1_lem20")
-kick_audio = ExtResource("2_u4021")
+kick_audio = ExtResource("2_7nm2v")
 
 [node name="scene_Lake_" type="Node3D" parent="."]
 
@@ -513,16 +513,16 @@ libraries = {
 }
 
 [node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
-stream = ExtResource("14_5cw3k")
+stream = ExtResource("15_p32fw")
 autoplay = true
 
 [node name="ambience" type="AudioStreamPlayer3D" parent="Game"]
-stream = ExtResource("15_22dx3")
+stream = ExtResource("16_hsqob")
 autoplay = true
 
 [node name="splash" type="AudioStreamPlayer3D" parent="Game"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51437, 0, -7.85699)
-stream = ExtResource("17_ji25u")
+stream = ExtResource("17_ylym4")
 
 [node name="PondBoot" type="Sprite3D" parent="Game"]
 transform = Transform3D(0.153, 0, 0, 0, 0.153, 0, 0, 0, 0.153, -1.68456, 2.36218, -4.441)
