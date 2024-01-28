@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://ccquu87mfbism"]
+
+[ext_resource type="Texture2D" uid="uid://dgh0psno7h28c" path="res://assets/animations/Boy_teeth/Dream 25/frame_01.png" id="1_7m1ni"]
+[ext_resource type="Texture2D" uid="uid://o7y2ghlxy1jc" path="res://assets/animations/Boy_teeth_shook/Dream 25/frame_01.png" id="1_ixahl"]
+[ext_resource type="Texture2D" uid="uid://ckrs2vwifairl" path="res://assets/animations/Boy_teeth/Dream 25/frame_02.png" id="2_uwtyu"]
+[ext_resource type="Texture2D" uid="uid://c2qb5nul7pm3u" path="res://assets/animations/Boy_teeth/Dream 25/frame_03.png" id="3_1fauo"]
+[ext_resource type="Texture2D" uid="uid://b7a45ff6y4r25" path="res://assets/animations/Boy_teeth/Dream 25/frame_04.png" id="4_cj8ss"]
+[ext_resource type="Texture2D" uid="uid://cwbxedl58u4jr" path="res://assets/animations/Boy_teeth/Dream 25/frame_05.png" id="5_wbk76"]
+[ext_resource type="Texture2D" uid="uid://chqt664adsv1n" path="res://assets/animations/Boy_teeth/Dream 25/frame_06.png" id="6_j050h"]
+[ext_resource type="Texture2D" uid="uid://bmw8qpghbr4k3" path="res://assets/animations/Boy_teeth/Dream 25/frame_07.png" id="7_ku5w0"]
+[ext_resource type="Texture2D" uid="uid://drm08qbwh8l0x" path="res://assets/animations/Boy_teeth/Dream 25/frame_08.png" id="8_72syd"]
+[ext_resource type="Texture2D" uid="uid://dctn5fta4r4iq" path="res://assets/animations/Boy_teeth/Dream 25/frame_09.png" id="9_gemvo"]
+[ext_resource type="Texture2D" uid="uid://qdbnbo482b3y" path="res://assets/animations/Boy_teeth/Dream 25/frame_10.png" id="10_br4w7"]
+[ext_resource type="Texture2D" uid="uid://cmatv67gmcj4w" path="res://assets/animations/Boy_teeth/Dream 25/frame_11.png" id="11_4o3ba"]
+[ext_resource type="Texture2D" uid="uid://tapt6ysxo1n3" path="res://assets/animations/Boy_teeth/Dream 25/frame_12.png" id="12_wbiut"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ixahl")
+}],
+"loop": true,
+"name": &"shook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7m1ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uwtyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1fauo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cj8ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wbk76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j050h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ku5w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_72syd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gemvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_br4w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4o3ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wbiut")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 9.0
+}]
