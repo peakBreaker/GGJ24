@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yl8t10frwnam" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_carpet_d.png" id="2_5bjx6"]
 [ext_resource type="Texture2D" uid="uid://bg3giwej57p7y" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_generics_A1_d.png" id="3_8ed5u"]
 [ext_resource type="Texture2D" uid="uid://dss0xc3ij81k" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_blueWall_d.png" id="4_dlyua"]
-[ext_resource type="Texture2D" uid="uid://tfdd836dit0n" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_pinkFloor_a.png" id="5_g4rjf"]
+[ext_resource type="Texture2D" uid="uid://hnv3581pbtg6" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_t_pinkFloor_a.png" id="5_g4rjf"]
 [ext_resource type="Texture2D" uid="uid://cjdrsqiaq4cat" path="res://assets/3d/scenes/TeethScene/scene_teeth-523376f3c51f062b3384308df88c690d_frame_01.png" id="6_k7qfy"]
 [ext_resource type="SpriteFrames" uid="uid://ccquu87mfbism" path="res://assets/animations/Boy_teeth/Dream 25/boy_teeth.tres" id="7_cx31g"]
 [ext_resource type="AudioStream" uid="uid://b8amrfhy6jh76" path="res://objects/sounds/audio_talkingWithFood.mp3" id="8_ydrsl"]

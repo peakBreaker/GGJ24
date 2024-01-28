@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://btqf0yoxl22h6"]
+[gd_scene load_steps=18 format=3 uid="uid://btqf0yoxl22h6"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_55h4j"]
 [ext_resource type="Texture2D" uid="uid://bxpig3t04wnii" path="res://assets/2d/pixel.png" id="2_4luei"]
 [ext_resource type="Script" path="res://scripts/effect_player.gd" id="2_j5rhn"]
 [ext_resource type="Texture2D" uid="uid://cvx3xixpklbrm" path="res://assets/2d/Screen_color.jpg" id="2_jt4gd"]
-[ext_resource type="AudioStream" uid="uid://bwpthe536mkpy" path="res://objects/sounds/Kids Cheering Sound Effect.mp3" id="5_jx5sj"]
 [ext_resource type="AudioStream" uid="uid://qiwt2upqyart" path="res://objects/sounds/Fail Sound.mp3" id="6_mojea"]
 [ext_resource type="AudioStream" uid="uid://br4fgpojq633k" path="res://objects/sounds/background_children_playing.mp3" id="7_mnify"]
+[ext_resource type="SpriteFrames" uid="uid://ci4ybpgxlvqqs" path="res://assets/animations/Menus/Screen_logo/Dream 32/opening_animation.tres" id="8_dmm8v"]
+[ext_resource type="AudioStream" uid="uid://2x88soyh8yhv" path="res://assets/sounds/DONTDOTHETHING.mp3" id="8_qcpa4"]
+[ext_resource type="AudioStream" uid="uid://tus0mvppoj7v" path="res://assets/sounds/IntroMusic.mp3" id="9_0by8p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gdqn"]
 bg_color = Color(0.521569, 0, 0.0862745, 0.215686)
@@ -25,10 +27,72 @@ corner_radius_bottom_left = 20
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8e1k"]
 texture = ExtResource("2_jt4gd")
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jm3vp"]
+animation = &"opening_animation"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vrk5t"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_jm3vp")
+nodes/Animation/position = Vector2(270, 90)
+nodes/output/position = Vector2(510, 110)
+node_connections = [&"output", 0, &"Animation"]
+
+[sub_resource type="Animation" id="Animation_df0cd"]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.8, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_17dwd"]
+resource_name = "opening_animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.8, 2.6, 3.1, 3.5, 4, 4.3, 4.6, 5.1, 5.5, 6, 6.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%winning_decorations/AudioStreamPlayer2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_qcpa4")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0y6xc"]
+_data = {
+"RESET": SubResource("Animation_df0cd"),
+"opening_animation": SubResource("Animation_17dwd")
+}
+
 [node name="Manager" type="Node3D"]
 script = ExtResource("1_55h4j")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 15
@@ -208,7 +272,6 @@ hue_variation_min = -1.0
 hue_variation_max = -1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="winning_decorations"]
-stream = ExtResource("5_jx5sj")
 
 [node name="losing_decorations" type="Node2D" parent="." node_paths=PackedStringArray("particles", "audios")]
 unique_name_in_owner = true
@@ -244,6 +307,24 @@ stream = ExtResource("6_mojea")
 stream = ExtResource("7_mnify")
 volume_db = -20.0
 autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(956, 542)
+sprite_frames = ExtResource("8_dmm8v")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_vrk5t")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationTree")
+libraries = {
+"": SubResource("AnimationLibrary_0y6xc")
+}
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_0by8p")
 
 [connection signal="pressed" from="Control/LoseMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/WinMenu/HBoxContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]

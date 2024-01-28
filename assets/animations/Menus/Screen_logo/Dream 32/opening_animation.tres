@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://ci4ybpgxlvqqs"]
+
+[ext_resource type="Texture2D" uid="uid://3i5juclt12t1" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_1.png" id="1_r42c2"]
+[ext_resource type="Texture2D" uid="uid://dxa0fr6toci7n" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_2.png" id="2_txe0w"]
+[ext_resource type="Texture2D" uid="uid://b87rdsvk7hnky" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_3.png" id="3_1yflw"]
+[ext_resource type="Texture2D" uid="uid://cnxmiu22c2u5r" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_4.png" id="4_on8la"]
+[ext_resource type="Texture2D" uid="uid://cnh7udsqu3y80" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_5.png" id="5_hxvnw"]
+[ext_resource type="Texture2D" uid="uid://c4tpehnt0123d" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_6.png" id="6_jlnep"]
+[ext_resource type="Texture2D" uid="uid://dt1qybe8hv8pe" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_7.png" id="7_5xqn3"]
+[ext_resource type="Texture2D" uid="uid://ce50ht5qghr2f" path="res://assets/animations/Menus/Screen_logo/Dream 32/frame_8.png" id="8_e8e08"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r42c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_txe0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1yflw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_on8la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hxvnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jlnep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5xqn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e8e08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
