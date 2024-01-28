@@ -46,10 +46,6 @@ corner_radius_bottom_left = 20
 [node name="Manager" type="Node3D"]
 script = ExtResource("1_55h4j")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_xwuty")
-camera_attributes = SubResource("CameraAttributesPractical_7od47")
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
