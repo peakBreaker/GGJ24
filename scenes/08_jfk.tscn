@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://ysohayo03n1g"]
+[gd_scene load_steps=70 format=3 uid="uid://ysohayo03n1g"]
 
 [ext_resource type="Script" path="res://scenes/08_jfk.gd" id="1_22y5m"]
 [ext_resource type="Texture2D" uid="uid://ccjkhda1sak5t" path="res://assets/animations/Shot_jfk dead/Dream 27/frame_1.png" id="2_bidij"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dbqunsfvke4jb" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_2.png" id="15_uklpa"]
 [ext_resource type="Texture2D" uid="uid://cktnvq73vlyls" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_3.png" id="16_cxkdl"]
 [ext_resource type="Texture2D" uid="uid://djc57067hj2o2" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_4.png" id="17_4i01p"]
-[ext_resource type="AudioStream" path="res://assets/sounds/candle_blowout.mp3" id="17_51g6a"]
 [ext_resource type="Texture2D" uid="uid://icww8tesr0h1" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_5.png" id="18_3wi2f"]
 [ext_resource type="Texture2D" uid="uid://c8pkokltuo8xa" path="res://assets/animations/Shot_jfk wife/Dream 27/frame_6.png" id="19_3er5d"]
 [ext_resource type="PackedScene" uid="uid://dbuer4tf5nuug" path="res://objects/spacebar.tscn" id="20_hvdar"]
@@ -722,7 +721,6 @@ libraries = {
 }
 
 [node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
-stream = ExtResource("17_51g6a")
 
 [node name="scene_president" type="Node3D" parent="."]
 

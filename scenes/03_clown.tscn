@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://b7rgjqq58giql"]
+[gd_scene load_steps=49 format=3 uid="uid://b7rgjqq58giql"]
 
 [ext_resource type="Script" path="res://scenes/03_clown.gd" id="1_2weup"]
 [ext_resource type="Texture2D" uid="uid://dkj1yjisypbvh" path="res://assets/3d/scenes/StageScene/scene_stage-0bca8110331b6ced91c0e2ec3eb4d89d_t_pinkFloor_a.png" id="2_vjibq"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://batt7ohnxrumb" path="res://assets/animations/Circus_juggling/Dream 28/frame_3.png" id="5_qsk6d"]
 [ext_resource type="Texture2D" uid="uid://bsgmvcgiiswk7" path="res://assets/animations/Circus_juggling/Dream 28/frame_4.png" id="6_fvxwl"]
 [ext_resource type="Texture2D" uid="uid://vqkdovswsbu3" path="res://assets/animations/Circus_sadclown~/Dream 28/frame_1.png" id="7_ihc2t"]
-[ext_resource type="AudioStream" path="res://assets/sounds/candle_blowout.mp3" id="12_lecuk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gmmm"]
 resource_name = "m_pinkfloor"
@@ -537,7 +536,7 @@ sprite_frames = SubResource("SpriteFrames_8hhp0")
 animation = &"sad"
 
 [node name="Instruction" parent="Game" instance=ExtResource("3_cxjuc")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.21949, -0.657785, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0558748, -1.37518, 0)
 
 [node name="Instruction_anim" type="AnimationPlayer" parent="Game"]
 libraries = {
@@ -550,7 +549,6 @@ anim_player = NodePath("../Instruction_anim")
 active = true
 
 [node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
-stream = ExtResource("12_lecuk")
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game"]
 process_mode = 3

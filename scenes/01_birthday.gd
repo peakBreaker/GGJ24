@@ -19,23 +19,24 @@ func _ready():
 	if not game_over:
 		anim_sprite.play("inhale")
 	await get_tree().create_timer(6.0).timeout
-	$Game/Instruction.queue_free()
+	
 	if not game_over:
+		$Game/Instruction.queue_free()
 		# Do something afterwards
-		anim_sprite.play("blowing")
-	await get_tree().create_timer(2.0).timeout
-	anim_candle.queue_free()
-	await get_tree().create_timer(2.0).timeout
-	if not game_over:
-		on_win.emit()
-		game_over = true
-		anim_sprite.play("waiting")
+		game_over = true		
 		sound_player.stream = preload("res://assets/sounds/BlowoutMP3.mp3")
+		await get_tree().create_timer(0.2).timeout		
+		anim_sprite.play("blowing")
+		await get_tree().create_timer(0.2).timeout
+		anim_candle.queue_free()
+		await get_tree().create_timer(0.5).timeout
+		on_win.emit()
+		anim_sprite.play("waiting")
 		sound_player.play()
 
 func _input(event):
 	# handle the space button here
-	if event.is_action_pressed("the_button"):
+	if event.is_action_pressed("the_button") and not game_over:
 		$Game/Instruction.queue_free()
 		game_over = true
 		$background_sounds.stop()
