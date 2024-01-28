@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ysohayo03n1g"]
+
+[ext_resource type="Script" path="res://scenes/07_basement.gd" id="1_jcjh7"]
+[ext_resource type="PackedScene" uid="uid://d1ble3vobc2hl" path="res://assets/3d/scenes/CellarScene/scene_cellar.fbx" id="2_gm4l8"]
+[ext_resource type="Texture2D" uid="uid://ci0qmfra1atu" path="res://assets/animations/Basement_clown~/Dream 29/frame_1.png" id="3_akvq1"]
+[ext_resource type="Texture2D" uid="uid://b4qamvupum6kp" path="res://assets/animations/Basement_clown~/Dream 29/frame_2.png" id="4_tpvkw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_873bv"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_akvq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tpvkw")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="08_jfk" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0219011, 0.0206969, 0.00178528)
+script = ExtResource("1_jcjh7")
+
+[node name="scene_cellar" parent="." instance=ExtResource("2_gm4l8")]
+
+[node name="Game" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
+transform = Transform3D(0.481253, 0, 0, 0, 0.481253, 0, 0, 0, 0.481253, 0.173154, 0.360127, 0.503926)
+sprite_frames = SubResource("SpriteFrames_873bv")
+animation = &"new_animation"

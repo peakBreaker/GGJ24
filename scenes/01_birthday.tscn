@@ -706,14 +706,14 @@ length = 19.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Game/shake_speed_tree:parameters/BlendTree/TimeScale/scale")
+tracks/0/path = NodePath("Instruct/instruction_shake_tree:parameters/BlendTree/TimeScale/scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 19.2),
-"transitions": PackedFloat32Array(17.1485, 17.7531),
+"times": PackedFloat32Array(0, 16.1),
+"transitions": PackedFloat32Array(6.72717, 4.28709),
 "update": 0,
-"values": [0.5, 8.0]
+"values": [0.2, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mb32y"]
@@ -882,16 +882,16 @@ stream = ExtResource("6_krjn5")
 autoplay = true
 
 [node name="Game" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866332, 0, -2.35671)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.963139, 1.11915, -2.35671)
 
 [node name="sounds" type="AudioStreamPlayer3D" parent="Game"]
 stream = ExtResource("8_b4m3r")
 
 [node name="Instruction" parent="Game" instance=ExtResource("9_og4uq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33796, -0.591147, 0)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Game"]
-transform = Transform3D(0.319747, 0.00530209, 0, -0.00530209, 0.319747, 0, 0, 0, 0.319791, -0.15728, 2.14844, 1.00126)
+transform = Transform3D(0.319747, 0.00530209, 0, -0.00530209, 0.319747, 0, 0, 0, 0.319791, -0.0127378, 1.03708, 1.00126)
 sprite_frames = ExtResource("9_5bxyc")
 animation = &"blowing"
 
@@ -908,7 +908,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_jsk3m")
 anim_player = NodePath("../instruction_shake")
 active = true
-parameters/BlendTree/TimeScale/scale = 0.200221
+parameters/BlendTree/TimeScale/scale = 0.5
 
 [node name="instruction_shake" type="AnimationPlayer" parent="Game"]
 libraries = {
