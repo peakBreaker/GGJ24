@@ -14,7 +14,7 @@ func _ready():
 	$Instruction.queue_free()
 	can_intervene = false
 	anim_sprite.play("waiting")
-	
+
 func _input(event):
 	# handle the space button here
 	if event is InputEventKey and event.pressed:

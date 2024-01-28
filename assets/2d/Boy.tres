@@ -1,8 +1,11 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://dbj488fajykff"]
+[gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://dbj488fajykff"]
 
+[ext_resource type="Texture2D" uid="uid://03vmc3ffqgf5" path="res://assets/animations/Birthday_blowing/Dream 24/frame_1.png" id="1_calij"]
 [ext_resource type="Texture2D" uid="uid://q7d6ghn7c2eh" path="res://assets/animations/Birthday_crying/Dream 24/frame_1.png" id="1_jtumm"]
 [ext_resource type="Texture2D" uid="uid://dnh4700fjyjlp" path="res://assets/animations/Birthday_crying/Dream 24/frame_2.png" id="2_owlc0"]
+[ext_resource type="Texture2D" uid="uid://ledvc5i2efnl" path="res://assets/animations/Birthday_blowing/Dream 24/frame_2.png" id="2_sttk0"]
 [ext_resource type="Texture2D" uid="uid://edy8lr76yyl4" path="res://assets/animations/Birthday_crying/Dream 24/frame_3.png" id="3_iea63"]
+[ext_resource type="Texture2D" uid="uid://cecx63jb1hx3r" path="res://assets/animations/Birthday_blowing/Dream 24/frame_3.png" id="3_ude0l"]
 [ext_resource type="Texture2D" uid="uid://r7830tf0yg5i" path="res://assets/animations/Birthday_crying/Dream 24/frame_4.png" id="4_v22ul"]
 [ext_resource type="Texture2D" uid="uid://dcx46f630kmv8" path="res://assets/animations/Birthday_inhale/Dream 24/frame_1.png" id="5_j0t5t"]
 [ext_resource type="Texture2D" uid="uid://bivf6b8d0tyrm" path="res://assets/animations/Birthday_inhale/Dream 24/frame_2.png" id="6_kwcfw"]
@@ -15,6 +18,20 @@
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_calij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sttk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ude0l")
+}],
+"loop": true,
+"name": &"blowing",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_jtumm")
