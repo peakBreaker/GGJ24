@@ -698,7 +698,7 @@ animation = &"shock"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144418, 0.341816, -3.28461)
 
 [node name="Instruction" parent="Game/Instruct" instance=ExtResource("20_hvdar")]
-transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 0.981004, -0.791935, 0)
+transform = Transform3D(1.7271, 0, 0, 0, 1.7271, 0, 0, 0, 1.7271, 0.784174, -0.902652, 0)
 
 [node name="shake_speed" type="AnimationPlayer" parent="Game/Instruct"]
 process_mode = 3

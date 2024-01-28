@@ -18,7 +18,8 @@ func _process(delta):
 	var viewportWidth = get_viewport().size.x
 	var viewportHeight = get_viewport().size.y 
 
-	var scale = viewportWidth / self.texture.get_size().x
+	print(viewportWidth)
+	var scale = (viewportWidth - 200) / self.texture.get_size().x
 	# Optional: Center the sprite, required only if the sprite's Offset>Centered checkbox is set
 	self.set_position(Vector2(viewportWidth/2, viewportHeight/2))
 
@@ -47,6 +48,7 @@ texture = ExtResource("2_8qioy")
 script = SubResource("GDScript_xndss")
 
 [node name="credits2" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(587.5, 322.5)
 scale = Vector2(0.231095, 0.186359)
 texture = ExtResource("3_v8p6s")
