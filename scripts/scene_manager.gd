@@ -10,8 +10,8 @@ var active_scene_instance
 
 var scenes = [
 	preload("res://scenes/01_birthday.tscn"),
-	#preload("res://scenes/02_teeth.tscn"),
 	preload("res://scenes/03_clown.tscn"),
+	preload("res://scenes/02_teeth.tscn"),
 	#preload("res://scenes/04_nine_eleven.tscn"),
 	preload("res://scenes/05_pond.tscn"),
 	preload("res://scenes/07_basement.tscn"),
